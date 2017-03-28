@@ -16,5 +16,10 @@ namespace MiniKeyboard
         {
             InitializeComponent();
         }
+
+        private void NotePad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
