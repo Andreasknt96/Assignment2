@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.NotePad = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.Word_Builder = new System.Windows.Forms.TextBox();
-            this.textModeStatus = new System.Windows.Forms.TextBox();
+            this.Mode_Status = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -74,6 +75,7 @@
             this.listBox10 = new System.Windows.Forms.ListBox();
             this.listBox11 = new System.Windows.Forms.ListBox();
             this.Key_Sequence = new System.Windows.Forms.TextBox();
+            this.withinTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -148,6 +150,7 @@
             this.configureToolStripMenuItem.Name = "configureToolStripMenuItem";
             this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.configureToolStripMenuItem.Text = "Configure";
+            this.configureToolStripMenuItem.Click += new System.EventHandler(this.configureToolStripMenuItem_Click);
             // 
             // printDialog1
             // 
@@ -162,22 +165,22 @@
             this.Word_Builder.Size = new System.Drawing.Size(191, 25);
             this.Word_Builder.TabIndex = 2;
             // 
-            // textModeStatus
+            // Mode_Status
             // 
-            this.textModeStatus.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.textModeStatus.Location = new System.Drawing.Point(200, 3);
-            this.textModeStatus.Multiline = true;
-            this.textModeStatus.Name = "textModeStatus";
-            this.textModeStatus.Size = new System.Drawing.Size(59, 25);
-            this.textModeStatus.TabIndex = 3;
-            this.textModeStatus.Text = "Multi-Press";
+            this.Mode_Status.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Mode_Status.Location = new System.Drawing.Point(200, 3);
+            this.Mode_Status.Multiline = true;
+            this.Mode_Status.Name = "Mode_Status";
+            this.Mode_Status.Size = new System.Drawing.Size(59, 25);
+            this.Mode_Status.TabIndex = 3;
+            this.Mode_Status.Text = "Multi-Press";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Word_Builder);
-            this.panel1.Controls.Add(this.textModeStatus);
+            this.panel1.Controls.Add(this.Mode_Status);
             this.panel1.Location = new System.Drawing.Point(183, 188);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 33);
@@ -229,6 +232,7 @@
             this.button19.TabIndex = 18;
             this.button19.Text = "Enter";
             this.button19.UseVisualStyleBackColor = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
             // 
             // button18
             // 
@@ -287,6 +291,7 @@
             this.button13.TabIndex = 12;
             this.button13.Text = "Mode";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button12
             // 
@@ -307,6 +312,7 @@
             this.button11.TabIndex = 10;
             this.button11.Text = "000\r\n[ _ }";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -612,6 +618,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Mini Keyboard v1.0";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -637,7 +644,7 @@
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.TextBox Word_Builder;
-        private System.Windows.Forms.TextBox textModeStatus;
+        private System.Windows.Forms.TextBox Mode_Status;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -672,6 +679,7 @@
         private System.Windows.Forms.ListBox listBox10;
         private System.Windows.Forms.ListBox listBox11;
         private System.Windows.Forms.TextBox Key_Sequence;
+        private System.Windows.Forms.Timer withinTimer;
 
     }
 }
