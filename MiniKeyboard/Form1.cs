@@ -78,5 +78,60 @@ namespace MiniKeyboard
             Key_Sequence.Clear();
             Word_Builder.Clear();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //We select an item from the listBox7 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox7.SetSelected(index, true);
+                    Word_Builder.Text = listBox7.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We increase the position of the Word_Builder textbox to the second character.
+                    x++;
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox7 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox7.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox7 by increasing the index and append them to the WordBuilder textbox.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox7.SelectedItem.ToString());
+                            index++;
+                        }
+                        else
+                        {
+                            //We increase the position of the character to the next position in the WordBuilder textbox.
+                            x++;
+                            //We reset the index.
+                            index = 0;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

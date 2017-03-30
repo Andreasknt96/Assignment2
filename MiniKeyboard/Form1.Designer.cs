@@ -353,6 +353,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "7\r\n . , \"";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
