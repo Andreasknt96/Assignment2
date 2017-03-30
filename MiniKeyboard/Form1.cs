@@ -133,5 +133,63 @@ namespace MiniKeyboard
                 }
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //We select an item from the listBox4 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox4.SetSelected(index, true);
+                    Word_Builder.Text = listBox4.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox4 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox4.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox4.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox4 by increasing the index and append them to the WordBuilder textbox.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox4.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
