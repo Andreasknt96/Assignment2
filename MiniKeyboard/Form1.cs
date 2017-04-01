@@ -191,5 +191,68 @@ namespace MiniKeyboard
                 }
             }
         }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Opens a new file.
+            NotePad.Clear();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Initial directory of the file on the hard disc.
+            openFileDialog1.InitialDirectory = "C:\\";
+            //Opening an openFileDialog.
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                //Opens the file.
+                StreamReader inputStream = File.OpenText(openFileDialog1.FileName);
+                //We input the contents of the file into the NotePad textbox.
+                NotePad.AppendText(inputStream.ReadToEnd());
+                //We are asking for a file name for the file.
+                strPresentFilePathName = openFileDialog1.FileName;
+                //Close the file.
+                inputStream.Close();
+            }
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (strPresentFilePathName == "")
+            {
+                // This redirect it to the Save As function
+                saveAsToolStripMenuItem_Click(sender, e);
+            }
+            else
+            {
+                //We creat a file and we save the contents of the NotePad.
+                StreamWriter outputStream = File.CreateText(strPresentFilePathName);
+                outputStream.Write(NotePad.Text);
+                //Close the file.
+                outputStream.Close();
+            }
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Initial directory to save a file.
+            saveFileDialog1.InitialDirectory = "C:\\";
+            //We create a file and we save the contents of the NotePad.
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
+                outputStream.Write(NotePad.Text);
+                //Close the file.
+                outputStream.Close();
+            }
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Closes Application.
+            Close();
+        }
     }
 }
