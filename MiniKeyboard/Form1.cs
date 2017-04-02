@@ -398,5 +398,456 @@ namespace MiniKeyboard
                 }
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                Key_Sequence.AppendText("5".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox5 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox5.SetSelected(index, true);
+                    Word_Builder.Text = listBox5.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox5 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox5.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox5.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox5 by increasing the index and append them to the WordBuilder textbox.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox5.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                Key_Sequence.AppendText("6".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox6 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox6.SetSelected(index, true);
+                    Word_Builder.Text = listBox6.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox6 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox6.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox6.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox6 by increasing the index and append them to the WordBuilder textbox.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox6.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                Key_Sequence.AppendText("2".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox2 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox2.SetSelected(index, true);
+                    Word_Builder.Text = listBox2.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox2 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox2.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox2.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox2 by increasing the index and append them to the WordBuilder textbox.
+                            listBox2.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox2.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                Key_Sequence.AppendText("8".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox8 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox8.SetSelected(index, true);
+                    Word_Builder.Text = listBox8.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox8 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox8.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox8.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox8 by increasing the index and append them to the WordBuilder textbox.
+                            listBox8.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox8.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                Key_Sequence.AppendText("9".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox9 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 6)
+                {
+                    listBox9.SetSelected(index, true);
+                    Word_Builder.Text = listBox9.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox9 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox9.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox9.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 6)
+                        {
+                            //Selecting the other items fromt he listbox9 by increasing the index and append them to the WordBuilder textbox.
+                            listBox9.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox9.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox10 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 2)
+                {
+                    listBox10.SetSelected(index, true);
+                    Word_Builder.Text = listBox10.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox10 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox10.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox10.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 2)
+                        {
+                            //Selecting the other items fromt he listbox10 by increasing the index and append them to the WordBuilder textbox.
+                            listBox10.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox10.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            //On the first selection of the key we append the key number to the variable str_KeyStrokes.
+            while (boolFirstVisit == true)
+            {
+                boolFirstVisit = false;
+            }
+            //We select an item from the listBox11 and appended to Word_Builder textbox for the first character.
+            if (x == 0)
+            {
+                if (index <= 2)
+                {
+                    listBox11.SetSelected(index, true);
+                    Word_Builder.Text = listBox11.SelectedItem.ToString();
+                    //We increase the index every time we press the button.
+                    index++;
+                }
+                else
+                {
+                    //We initialise the index to start from the beginning.
+                    index = 0;
+                }
+            }
+            else
+            {
+                if (x != 0)
+                {
+                    //We select the first item from the listbox11 and append it to the second position of the WordBuilder textbox.
+                    if (index == 0)
+                    {
+                        listBox11.SetSelected(index, true);
+                        Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
+                        Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox11.SelectedItem.ToString());
+                        //We increment the index.
+                        index++;
+                    }
+                    else
+                    {
+                        if (index <= 2)
+                        {
+                            //Selecting the other items fromt he listbox11 by increasing the index and append them to the WordBuilder textbox.
+                            listBox11.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox11.SelectedItem.ToString());
+                            //We increment the index.
+                            index++;
+                        }
+                        else
+                        {
+                            //We reset the index.
+                            index = 0;
+                            //We remove the last character from the textbox.
+                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
