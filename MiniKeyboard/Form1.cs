@@ -91,6 +91,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox7 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -868,6 +874,22 @@ namespace MiniKeyboard
                     }
                 }
             }
+        }
+
+        private void withinTimer_Tick(object sender, EventArgs e)
+        {
+            //Setting up the timer for one time only.
+            withinTimer.Stop();
+            //Setting up the cursor at the end of Word_Builder text.
+            Word_Builder.Focus();
+            Word_Builder.SelectionStart = Word_Builder.Text.Length;
+            //Increamenting the intiger x.
+            x++;
+            //Set the index equal to 0.
+            index = 0;
+            //We make the firstvisit true and the buttonpressed to false.
+            boolFirstVisit = true;
+            boolsButtonPressed[intWhichButton] = false;
         }
     }
 }
