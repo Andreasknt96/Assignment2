@@ -160,6 +160,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox4 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -296,6 +302,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox1 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -362,6 +374,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox3 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -428,6 +446,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox5 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -494,6 +518,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox6 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -560,6 +590,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox2 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -626,6 +662,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox8 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -692,6 +734,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox9 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -756,6 +804,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox10 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
@@ -820,6 +874,12 @@ namespace MiniKeyboard
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
+
+            // To exdent the timer interval whenever we press a key.
+            withinTimer.Enabled = false;
+            withinTimer.Enabled = true;
+            withinTimer.Interval = intIntervalRequired;
+
             //We select an item from the listBox11 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
