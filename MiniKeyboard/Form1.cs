@@ -77,6 +77,8 @@ namespace MiniKeyboard
             NotePad.AppendText(Word_Builder.Text.ToString() + " ");
             Key_Sequence.Clear();
             Word_Builder.Clear();
+            x = 0;
+            index = 0;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -87,6 +89,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("7".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox7 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -149,6 +152,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("4".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox4 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -233,32 +237,39 @@ namespace MiniKeyboard
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (strPresentFilePathName == "")
-            {
-                // This redirect it to the Save As function
-                saveAsToolStripMenuItem_Click(sender, e);
-            }
-            else
-            {
-                //We creat a file and we save the contents of the NotePad.
-                StreamWriter outputStream = File.CreateText(strPresentFilePathName);
-                outputStream.Write(NotePad.Text);
-                //Close the file.
-                outputStream.Close();
+            //The file must not be empty.
+          if (NotePad.Text != string.Empty)
+          {
+              if (strPresentFilePathName == "")
+              {
+                  // This redirect it to the Save As function
+                  saveAsToolStripMenuItem_Click(sender, e);
+              }
+              else
+              {
+                  //We creat a file and we save the contents of the NotePad.
+                  StreamWriter outputStream = File.CreateText(strPresentFilePathName);
+                  outputStream.Write(NotePad.Text);
+                  //Close the file.
+                  outputStream.Close();
+              }
             }
         }
 
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Initial directory to save a file.
-            saveFileDialog1.InitialDirectory = "C:\\";
-            //We create a file and we save the contents of the NotePad.
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (NotePad.Text != string.Empty)
             {
-                StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
-                outputStream.Write(NotePad.Text);
-                //Close the file.
-                outputStream.Close();
+                //Initial directory to save a file.
+                saveFileDialog1.InitialDirectory = "C:\\";
+                //We create a file and we save the contents of the NotePad.
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter outputStream = File.CreateText(saveFileDialog1.FileName);
+                    outputStream.Write(NotePad.Text);
+                    //Close the file.
+                    outputStream.Close();
+                }
             }
 
         }
@@ -277,6 +288,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("1".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox1 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -342,6 +354,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("3".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox3 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -407,6 +420,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("5".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox5 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -472,6 +486,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("6".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox6 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -537,6 +552,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("2".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox2 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -602,6 +618,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("8".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox8 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -667,6 +684,7 @@ namespace MiniKeyboard
                 Key_Sequence.AppendText("9".ToString());
                 str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox9 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -730,6 +748,7 @@ namespace MiniKeyboard
             while (boolFirstVisit == true)
             {
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox10 and appended to Word_Builder textbox for the first character.
             if (x == 0)
@@ -793,6 +812,7 @@ namespace MiniKeyboard
             while (boolFirstVisit == true)
             {
                 boolFirstVisit = false;
+                boolsButtonPressed[intWhichButton] = true;
             }
             //We select an item from the listBox11 and appended to Word_Builder textbox for the first character.
             if (x == 0)
