@@ -87,6 +87,7 @@ namespace MiniKeyboard
             switch (intMyListIndex)
             {
                 case 1:
+                    index--;
                     //We select the not selected button which was pressed before.
                     listBox1.SetSelected(index, true);
                     Word_Builder.AppendText(listBox1.SelectedItem.ToString());
@@ -98,6 +99,7 @@ namespace MiniKeyboard
                     break;
 
                 case 2:
+                    index--;
                     //We select the not selected button which was pressed before.
                     listBox2.SetSelected(index, true);
                     Word_Builder.AppendText(listBox2.SelectedItem.ToString());
@@ -109,6 +111,7 @@ namespace MiniKeyboard
                     break;
 
                 case 3:
+                    index--;
                     //We select the not selected button which was pressed before.
                     listBox3.SetSelected(index, true);
                     Word_Builder.AppendText(listBox3.SelectedItem.ToString());
@@ -120,6 +123,7 @@ namespace MiniKeyboard
                     break;
 
                 case 4:
+                    index--;
                     //We select the not selected button which was pressed before.
                     listBox4.SetSelected(index, true);
                     Word_Builder.AppendText(listBox4.SelectedItem.ToString());
