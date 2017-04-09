@@ -28,6 +28,7 @@ namespace MiniKeyboard
         string strPresentFilePathName = "";
         //The position of the character in the WordBuilder textbox.
         int x = 0;
+        int intMyListIndex;
         public Form1()
         {
             InitializeComponent();
@@ -83,6 +84,52 @@ namespace MiniKeyboard
 
         private void button7_Click(object sender, EventArgs e)
         {
+            switch (intMyListIndex)
+            {
+                case 1:
+                    //We select the not selected button which was pressed before.
+                    listBox1.SetSelected(index, true);
+                    Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                    boolFirstVisit = true;
+                    boolsButtonPressed[intWhichButton] = false;
+                    //We increament the position of the character in the Word_Builder text and making the index 0.
+                    x++;
+                    index = 0;
+                    break;
+
+                case 2:
+                    //We select the not selected button which was pressed before.
+                    listBox2.SetSelected(index, true);
+                    Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                    boolFirstVisit = true;
+                    boolsButtonPressed[intWhichButton] = false;
+                    //We increament the position of the character in the Word_Builder text and making the index 0.
+                    x++;
+                    index = 0;
+                    break;
+
+                case 3:
+                    //We select the not selected button which was pressed before.
+                    listBox3.SetSelected(index, true);
+                    Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                    boolFirstVisit = true;
+                    boolsButtonPressed[intWhichButton] = false;
+                    //We increament the position of the character in the Word_Builder text and making the index 0.
+                    x++;
+                    index = 0;
+                    break;
+
+                case 4:
+                    //We select the not selected button which was pressed before.
+                    listBox4.SetSelected(index, true);
+                    Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                    boolFirstVisit = true;
+                    boolsButtonPressed[intWhichButton] = false;
+                    //We increament the position of the character in the Word_Builder text and making the index 0.
+                    x++;
+                    index = 0;
+                    break;
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
