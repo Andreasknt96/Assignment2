@@ -418,6 +418,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 7;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -783,6 +784,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 4;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -1222,6 +1224,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 1;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -1590,6 +1593,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 3;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -1958,6 +1962,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 5;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2326,6 +2331,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 6;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2389,6 +2395,302 @@ namespace MiniKeyboard
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //We are checking if a button was pressed before and that is not number 2.
+            while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 2)
+            {
+                switch (intMyListIndex)
+                {
+                    case 1:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox1.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 3:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox3.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 4:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 5:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 6:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 7:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 8:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox8.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 9:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox9.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 10:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox10.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 11:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox11.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+                }
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
@@ -2398,6 +2700,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 2;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2461,6 +2764,302 @@ namespace MiniKeyboard
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //We are checking if a button was pressed before and that is not number 8.
+            while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 8)
+            {
+                switch (intMyListIndex)
+                {
+                    case 1:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox1.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 2:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox2.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 3:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox3.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 4:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 5:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 6:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 7:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 9:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox9.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 10:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox10.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 11:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox11.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+                }
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
@@ -2470,6 +3069,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 8;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2533,6 +3133,302 @@ namespace MiniKeyboard
 
         private void button9_Click(object sender, EventArgs e)
         {
+            //We are checking if a button was pressed before and that is not number 9.
+            while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 9)
+            {
+                switch (intMyListIndex)
+                {
+                    case 1:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox1.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 2:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox2.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 3:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox3.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 4:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 5:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 6:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 7:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 8:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox8.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 10:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox10.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 11:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox11.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+                }
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
@@ -2542,6 +3438,7 @@ namespace MiniKeyboard
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 9;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2605,13 +3502,312 @@ namespace MiniKeyboard
 
         private void button10_Click(object sender, EventArgs e)
         {
+            //We are checking if a button was pressed before and that is not number 10.
+            while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 10)
+            {
+                switch (intMyListIndex)
+                {
+                    case 1:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox1.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 2:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox2.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 3:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox3.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 4:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 5:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 6:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 7:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 8:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox8.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 9:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox9.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 11:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox11.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox11.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+                }
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
+                Key_Sequence.AppendText("*".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 10;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
@@ -2675,13 +3871,312 @@ namespace MiniKeyboard
 
         private void button12_Click(object sender, EventArgs e)
         {
+            //We are checking if a button was pressed before and that is not number 11.
+            while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 11)
+            {
+                switch (intMyListIndex)
+                {
+                    case 1:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox1.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 2:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox2.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 3:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox3.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 4:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox4.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 5:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox5.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 6:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox6.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 7:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox7.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 8:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox8.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox8.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 9:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox9.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox9.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+
+                    case 10:
+                        //We are checking whether the button which was pressed before is already selected.
+                        if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
+                        {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            x++;
+                            index = 0;
+                        }
+                        else
+                        {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
+                            //Setting the correct index for the previous button.
+                            index--;
+                            //We select the not selected button which was pressed before.
+                            listBox10.SetSelected(index, true);
+                            Word_Builder.AppendText(listBox10.SelectedItem.ToString());
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
+                            //We increament the position of the character in the Word_Builder text and making the index 0.
+                            x++;
+                            index = 0;
+                        }
+                        break;
+                }
+            }
             //On the first selection of the key we append the key number to the variable str_KeyStrokes.
             while (boolFirstVisit == true)
             {
+                Key_Sequence.AppendText("#".ToString());
+                str_KeyStrokes = Key_Sequence.Text.ToString();
                 boolFirstVisit = false;
                 boolsButtonPressed[intWhichButton] = true;
             }
 
+            intMyListIndex = 11;
             // To exdent the timer interval whenever we press a key.
             withinTimer.Enabled = false;
             withinTimer.Enabled = true;
