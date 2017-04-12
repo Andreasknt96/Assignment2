@@ -90,7 +90,7 @@ namespace MiniKeyboard
                 switch (intMyListIndex)
                 {
                     case 1:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -100,6 +100,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -114,7 +119,7 @@ namespace MiniKeyboard
                         break;
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -124,6 +129,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -138,7 +148,7 @@ namespace MiniKeyboard
                         break;
 
                     case 3:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -148,6 +158,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -162,7 +177,7 @@ namespace MiniKeyboard
                         break;
 
                     case 4:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -172,6 +187,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -186,7 +206,7 @@ namespace MiniKeyboard
                         break;
 
                     case 5:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -196,6 +216,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -210,7 +235,7 @@ namespace MiniKeyboard
                         break;
 
                     case 6:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -220,6 +245,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -234,7 +264,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -244,6 +274,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -258,7 +293,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -268,6 +303,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -282,7 +322,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -292,6 +332,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -306,7 +351,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -316,6 +361,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -330,7 +380,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -340,6 +390,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -429,7 +484,7 @@ namespace MiniKeyboard
                 switch (intMyListIndex)
                 {
                     case 1:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -439,6 +494,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -453,7 +513,7 @@ namespace MiniKeyboard
                         break;
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -463,6 +523,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -477,7 +542,7 @@ namespace MiniKeyboard
                         break;
 
                     case 3:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -487,6 +552,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -501,7 +571,7 @@ namespace MiniKeyboard
                         break;
 
                     case 5:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -511,6 +581,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -525,7 +600,7 @@ namespace MiniKeyboard
                         break;
 
                     case 6:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -535,6 +610,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -549,7 +629,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -559,6 +639,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -573,7 +658,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -583,6 +668,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -597,7 +687,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -607,6 +697,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -621,7 +716,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -631,6 +726,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -645,7 +745,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -655,6 +755,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -818,7 +923,7 @@ namespace MiniKeyboard
                 {
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -828,6 +933,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -842,7 +952,7 @@ namespace MiniKeyboard
                         break;
 
                     case 3:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -852,6 +962,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -866,7 +981,7 @@ namespace MiniKeyboard
                         break;
 
                     case 4:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -876,6 +991,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -890,7 +1010,7 @@ namespace MiniKeyboard
                         break;
 
                     case 5:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -900,6 +1020,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -914,7 +1039,7 @@ namespace MiniKeyboard
                         break;
 
                     case 6:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -924,6 +1049,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -938,7 +1068,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -948,6 +1078,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -962,7 +1097,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -972,6 +1107,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -986,7 +1126,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -996,6 +1136,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1010,7 +1155,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1020,6 +1165,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1034,7 +1184,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1044,6 +1194,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1136,7 +1291,7 @@ namespace MiniKeyboard
                 switch (intMyListIndex)
                 {
                     case 1:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1146,6 +1301,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1160,7 +1320,7 @@ namespace MiniKeyboard
                         break;
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1170,6 +1330,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1184,7 +1349,7 @@ namespace MiniKeyboard
                         break;
 
                     case 4:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1194,6 +1359,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1208,7 +1378,7 @@ namespace MiniKeyboard
                         break;
 
                     case 5:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1218,6 +1388,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1232,7 +1407,7 @@ namespace MiniKeyboard
                         break;
 
                     case 6:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1242,6 +1417,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1256,7 +1436,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1266,6 +1446,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1280,7 +1465,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1290,6 +1475,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1304,7 +1494,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1314,6 +1504,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1328,7 +1523,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1338,6 +1533,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1352,7 +1552,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1362,6 +1562,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1454,7 +1659,7 @@ namespace MiniKeyboard
                 switch (intMyListIndex)
                 {
                     case 1:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1464,6 +1669,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1478,7 +1688,7 @@ namespace MiniKeyboard
                         break;
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1488,6 +1698,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1502,7 +1717,7 @@ namespace MiniKeyboard
                         break;
 
                     case 3:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1512,6 +1727,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1526,7 +1746,7 @@ namespace MiniKeyboard
                         break;
 
                     case 4:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1536,6 +1756,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1550,7 +1775,7 @@ namespace MiniKeyboard
                         break;
 
                     case 6:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox6.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1560,6 +1785,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1574,7 +1804,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1584,6 +1814,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1598,7 +1833,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1608,6 +1843,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1622,7 +1862,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1632,6 +1872,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1646,7 +1891,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1656,6 +1901,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1670,7 +1920,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1680,6 +1930,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1772,7 +2027,7 @@ namespace MiniKeyboard
                 switch (intMyListIndex)
                 {
                     case 1:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1782,6 +2037,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1796,7 +2056,7 @@ namespace MiniKeyboard
                         break;
 
                     case 2:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox2.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1806,6 +2066,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1820,7 +2085,7 @@ namespace MiniKeyboard
                         break;
 
                     case 3:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox3.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1830,6 +2095,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1844,7 +2114,7 @@ namespace MiniKeyboard
                         break;
 
                     case 4:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox4.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1854,6 +2124,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1868,7 +2143,7 @@ namespace MiniKeyboard
                         break;
 
                     case 5:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox5.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1878,6 +2153,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1892,7 +2172,7 @@ namespace MiniKeyboard
                         break;
 
                     case 7:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox7.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1902,6 +2182,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1916,7 +2201,7 @@ namespace MiniKeyboard
                         break;
 
                     case 8:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox8.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1926,6 +2211,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1940,7 +2230,7 @@ namespace MiniKeyboard
                         break;
 
                     case 9:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox9.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1950,6 +2240,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1964,7 +2259,7 @@ namespace MiniKeyboard
                         break;
 
                     case 10:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox10.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1974,6 +2269,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
@@ -1988,7 +2288,7 @@ namespace MiniKeyboard
                         break;
 
                     case 11:
-                        //We are checking weather the button which was pressed before is already selected.
+                        //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox11.SelectedItem.ToString()))
                         {
                             boolFirstVisit = true;
@@ -1998,6 +2298,11 @@ namespace MiniKeyboard
                         }
                         else
                         {
+                            //Eliminate the case that the index equals to -1.
+                            while (index == 0)
+                            {
+                                index++;
+                            }
                             //Setting the correct index for the previous button.
                             index--;
                             //We select the not selected button which was pressed before.
