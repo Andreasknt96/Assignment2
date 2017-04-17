@@ -458,15 +458,17 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox7 by increasing the index and append them to the WordBuilder textbox.
                             listBox7.SetSelected(index, true);
                             Word_Builder.AppendText(listBox7.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox7.SelectedItem.ToString());
                             index++;
                         }
                         else
                         {
+                            boolFirstVisit = true;
+                            boolsButtonPressed[intWhichButton] = false;
                             //We increase the position of the character to the next position in the WordBuilder textbox.
                             x++;
                             //We reset the index.
@@ -815,10 +817,6 @@ namespace MiniKeyboard
                     {
                         listBox4.SetSelected(index, true);
                         Word_Builder.AppendText(listBox4.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox4.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox4.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -826,11 +824,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length -1);
                             //Selecting the other items fromt he listbox4 by increasing the index and append them to the WordBuilder textbox.
                             listBox4.SetSelected(index, true);
                             Word_Builder.AppendText(listBox4.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox4.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -838,8 +836,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -1255,10 +1253,6 @@ namespace MiniKeyboard
                     {
                         listBox1.SetSelected(index, true);
                         Word_Builder.AppendText(listBox1.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox1.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox1.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -1266,11 +1260,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 8)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox1 by increasing the index and append them to the WordBuilder textbox.
                             listBox1.SetSelected(index, true);
                             Word_Builder.AppendText(listBox1.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox1.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -1278,8 +1272,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -1624,10 +1618,6 @@ namespace MiniKeyboard
                     {
                         listBox3.SetSelected(index, true);
                         Word_Builder.AppendText(listBox3.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox3.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox3.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -1635,11 +1625,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 8)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox3 by increasing the index and append them to the WordBuilder textbox.
                             listBox3.SetSelected(index, true);
                             Word_Builder.AppendText(listBox3.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox3.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -1647,8 +1637,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -1993,10 +1983,6 @@ namespace MiniKeyboard
                     {
                         listBox5.SetSelected(index, true);
                         Word_Builder.AppendText(listBox5.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox5.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox5.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -2004,11 +1990,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox5 by increasing the index and append them to the WordBuilder textbox.
                             listBox5.SetSelected(index, true);
                             Word_Builder.AppendText(listBox5.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox5.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2016,8 +2002,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -2362,10 +2348,6 @@ namespace MiniKeyboard
                     {
                         listBox6.SetSelected(index, true);
                         Word_Builder.AppendText(listBox6.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox6.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox6.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -2373,11 +2355,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox6 by increasing the index and append them to the WordBuilder textbox.
                             listBox6.SetSelected(index, true);
                             Word_Builder.AppendText(listBox6.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox6.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2385,8 +2367,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -2731,10 +2713,6 @@ namespace MiniKeyboard
                     {
                         listBox2.SetSelected(index, true);
                         Word_Builder.AppendText(listBox2.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox2.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox2.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -2742,11 +2720,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox2 by increasing the index and append them to the WordBuilder textbox.
                             listBox2.SetSelected(index, true);
                             Word_Builder.AppendText(listBox2.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox2.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2754,8 +2732,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -3100,10 +3078,6 @@ namespace MiniKeyboard
                     {
                         listBox8.SetSelected(index, true);
                         Word_Builder.AppendText(listBox8.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox8.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox8.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -3111,11 +3085,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox8 by increasing the index and append them to the WordBuilder textbox.
                             listBox8.SetSelected(index, true);
                             Word_Builder.AppendText(listBox8.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox8.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -3123,8 +3097,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -3469,10 +3443,6 @@ namespace MiniKeyboard
                     {
                         listBox9.SetSelected(index, true);
                         Word_Builder.AppendText(listBox9.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox9.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox9.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -3480,11 +3450,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 6)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox9 by increasing the index and append them to the WordBuilder textbox.
                             listBox9.SetSelected(index, true);
                             Word_Builder.AppendText(listBox9.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox9.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -3492,8 +3462,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -3838,10 +3808,6 @@ namespace MiniKeyboard
                     {
                         listBox10.SetSelected(index, true);
                         Word_Builder.AppendText(listBox10.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox10.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox10.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -3849,11 +3815,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 2)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox10 by increasing the index and append them to the WordBuilder textbox.
                             listBox10.SetSelected(index, true);
                             Word_Builder.AppendText(listBox10.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox10.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -3861,8 +3827,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
@@ -4207,10 +4173,6 @@ namespace MiniKeyboard
                     {
                         listBox11.SetSelected(index, true);
                         Word_Builder.AppendText(listBox11.SelectedItem.ToString());
-                        //We append the same character in the WordBuilder textbox so as to leave the first item in the sequence.
-                        Word_Builder.AppendText(listBox11.SelectedItem.ToString());
-                        //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                        Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox11.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
@@ -4218,11 +4180,11 @@ namespace MiniKeyboard
                     {
                         if (index <= 2)
                         {
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                             //Selecting the other items fromt he listbox11 by increasing the index and append them to the WordBuilder textbox.
                             listBox11.SetSelected(index, true);
                             Word_Builder.AppendText(listBox11.SelectedItem.ToString());
-                            //By removing two characters from the starting position x and inserting from the same starting address the selected item.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 2).Insert(x, listBox11.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -4230,8 +4192,8 @@ namespace MiniKeyboard
                         {
                             //We reset the index.
                             index = 0;
-                            //We remove the last character from the textbox.
-                            Word_Builder.Text = Word_Builder.Text.Remove(x, 1);
+                            //We remove the last character of the Word_Builder text.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
                         }
                     }
                 }
