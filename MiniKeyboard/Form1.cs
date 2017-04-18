@@ -4204,6 +4204,37 @@ namespace MiniKeyboard
         {
             //Setting up the timer for one time only.
             withinTimer.Stop();
+            //Having the second character replaced by the first after the time interval.
+          if (index <= 2)
+          {
+              switch(intMyListIndex)
+              {
+                  case 7:
+                      if (x == 0)
+                      {
+                          listBox7.SetSelected(0, true);
+                          Word_Builder.Text = listBox7.SelectedItem.ToString();
+                      }
+                      else
+                      {
+                          if (index == 0)
+                          {
+                              Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                              listBox7.SetSelected(0, true);
+                              Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                          }
+                          else
+                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                             listBox7.SetSelected(0, true);
+                             Word_Builder.AppendText(listBox7.SelectedItem.ToString());
+                      }
+                      withinTimer.Stop();
+                      break;
+              }
+          }
+         else
+            //Setting up the timer for one time only.
+            withinTimer.Stop();
             //Setting up the cursor at the end of Word_Builder text.
             Word_Builder.Focus();
             Word_Builder.SelectionStart = Word_Builder.Text.Length;
