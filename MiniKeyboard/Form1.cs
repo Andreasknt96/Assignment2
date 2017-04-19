@@ -29,9 +29,29 @@ namespace MiniKeyboard
         //The position of the character in the WordBuilder textbox.
         int x = 0;
         int intMyListIndex;
+        int n1 = 0;
+        int n2 = 0;
+        int n3 = 0;
+        int n4 = 0;
+        int n5 = 0;
+        int n6 = 0;
+        int n7 = 0;
+        int n8 = 0;
+        int n9 = 0;
+        int n10 = 0;
+        int n11 = 0;
+        int item = 0;
         public Form1()
         {
             InitializeComponent();
+            string path1 = @"C:\\C# Assignment 2\\save1.txt";
+            if (!File.Exists(path1))
+            {
+                using (StreamWriter sw = File.CreateText(path1))
+                {
+
+                }
+            }
         }
 
         private void NotePad_TextChanged(object sender, EventArgs e)
@@ -74,12 +94,230 @@ namespace MiniKeyboard
 
         private void button11_Click(object sender, EventArgs e)
         {
-            //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
-            NotePad.AppendText(Word_Builder.Text.ToString() + " ");
-            Key_Sequence.Clear();
-            Word_Builder.Clear();
-            x = 0;
-            index = 0;
+            //Changing the mode to Prediction.
+            if (Mode_Status.Text == "Prediction")
+            {
+                //We append the contents of the Word_Builder textbox into the NotePad and clear the Word_Builder textbox.
+                NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                Word_Builder.Clear();
+            }
+            else
+            {
+                //If the Word_Builder is empty the button doesn't do anything.
+                if (Word_Builder.Text == "".ToString())
+                {
+                    Word_Builder.Text = "".ToString();
+                }
+                else
+                    //We populate a dictionary for the words starting with a character from button 1.
+                    if (Key_Sequence.Text.Substring(0, 1) == "1".ToString())
+                    {
+                        n1 = listBox12.Items.Count;
+                        listBox12.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n1);
+                        //We create a file on the hard disc to safe the contents of the dictionary.
+                        using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save1.txt"))
+                        foreach (var item in listBox12.Items)
+                        {
+                            SaveFile.WriteLine(item.ToString());
+                        }
+                        //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                        NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                        Key_Sequence.Clear();
+                        Word_Builder.Clear();
+                        x = 0;
+                        index = 0;
+                    }
+                    else
+                        //We populate a dictionary for the words starting with a character from button 2.
+                        if (Key_Sequence.Text.Substring(0, 1) == "2".ToString())
+                        {
+                            n2 = listBox13.Items.Count;
+                            listBox13.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n2);
+                            //We create a file on the hard disc to safe the contents of the dictionary.
+                            using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save2.txt"))
+                                foreach (var item in listBox13.Items)
+                                {
+                                    SaveFile.WriteLine(item.ToString());
+                                }
+                            //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                            NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                            Key_Sequence.Clear();
+                            Word_Builder.Clear();
+                            x = 0;
+                            index = 0;
+                        }
+                        else
+                            //We populate a dictionary for the words starting with a character from button 3.
+                            if (Key_Sequence.Text.Substring(0, 1) == "3".ToString())
+                            {
+                                n3 = listBox14.Items.Count;
+                                listBox14.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n3);
+                                //We create a file on the hard disc to safe the contents of the dictionary.
+                                using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save3.txt"))
+                                    foreach (var item in listBox14.Items)
+                                    {
+                                        SaveFile.WriteLine(item.ToString());
+                                    }
+                                //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                Key_Sequence.Clear();
+                                Word_Builder.Clear();
+                                x = 0;
+                                index = 0;
+                            }
+                            else
+                                //We populate a dictionary for the words starting with a character from button 4.
+                                if (Key_Sequence.Text.Substring(0, 1) == "4".ToString())
+                                {
+                                    n4 = listBox15.Items.Count;
+                                    listBox15.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n4);
+                                    //We create a file on the hard disc to safe the contents of the dictionary.
+                                    using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save4.txt"))
+                                        foreach (var item in listBox15.Items)
+                                        {
+                                            SaveFile.WriteLine(item.ToString());
+                                        }
+                                    //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                    NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                    Key_Sequence.Clear();
+                                    Word_Builder.Clear();
+                                    x = 0;
+                                    index = 0;
+                                }
+                                else
+                                    //We populate a dictionary for the words starting with a character from button 5.
+                                    if (Key_Sequence.Text.Substring(0, 1) == "5".ToString())
+                                    {
+                                        n5 = listBox16.Items.Count;
+                                        listBox16.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n5);
+                                        //We create a file on the hard disc to safe the contents of the dictionary.
+                                        using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save5.txt"))
+                                            foreach (var item in listBox16.Items)
+                                            {
+                                                SaveFile.WriteLine(item.ToString());
+                                            }
+                                        //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                        NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                        Key_Sequence.Clear();
+                                        Word_Builder.Clear();
+                                        x = 0;
+                                        index = 0;
+                                    }
+                                    else
+                                        //We populate a dictionary for the words starting with a character from button 6.
+                                        if (Key_Sequence.Text.Substring(0, 1) == "6".ToString())
+                                        {
+                                            n6 = listBox17.Items.Count;
+                                            listBox17.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n6);
+                                            //We create a file on the hard disc to safe the contents of the dictionary.
+                                            using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save6.txt"))
+                                                foreach (var item in listBox17.Items)
+                                                {
+                                                    SaveFile.WriteLine(item.ToString());
+                                                }
+                                            //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                            NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                            Key_Sequence.Clear();
+                                            Word_Builder.Clear();
+                                            x = 0;
+                                            index = 0;
+                                        }
+                                        else
+                                            //We populate a dictionary for the words starting with a character from button 7.
+                                            if (Key_Sequence.Text.Substring(0, 1) == "7".ToString())
+                                            {
+                                                n7 = listBox18.Items.Count;
+                                                listBox18.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n7);
+                                                //We create a file on the hard disc to safe the contents of the dictionary.
+                                                using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save7.txt"))
+                                                    foreach (var item in listBox18.Items)
+                                                    {
+                                                        SaveFile.WriteLine(item.ToString());
+                                                    }
+                                                //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                                NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                                Key_Sequence.Clear();
+                                                Word_Builder.Clear();
+                                                x = 0;
+                                                index = 0;
+                                            }
+                                            else
+                                                //We populate a dictionary for the words starting with a character from button 8.
+                                                if (Key_Sequence.Text.Substring(0, 1) == "8".ToString())
+                                                {
+                                                    n8 = listBox19.Items.Count;
+                                                    listBox19.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n8);
+                                                    //We create a file on the hard disc to safe the contents of the dictionary.
+                                                    using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save8.txt"))
+                                                        foreach (var item in listBox19.Items)
+                                                        {
+                                                            SaveFile.WriteLine(item.ToString());
+                                                        }
+                                                    //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                                    NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                                    Key_Sequence.Clear();
+                                                    Word_Builder.Clear();
+                                                    x = 0;
+                                                    index = 0;
+                                                }
+                                                else
+                                                    //We populate a dictionary for the words starting with a character from button 9.
+                                                    if (Key_Sequence.Text.Substring(0, 1) == "9".ToString())
+                                                    {
+                                                        n9 = listBox20.Items.Count;
+                                                        listBox20.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n9);
+                                                        //We create a file on the hard disc to safe the contents of the dictionary.
+                                                        using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save9.txt"))
+                                                            foreach (var item in listBox20.Items)
+                                                            {
+                                                                SaveFile.WriteLine(item.ToString());
+                                                            }
+                                                        //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                                        NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                                        Key_Sequence.Clear();
+                                                        Word_Builder.Clear();
+                                                        x = 0;
+                                                        index = 0;
+                                                    }
+                                                    else
+                                                        //We populate a dictionary for the words starting with a character from button 10.
+                                                        if (Key_Sequence.Text.Substring(0, 1) == "10".ToString())
+                                                        {
+                                                            n10 = listBox21.Items.Count;
+                                                            listBox21.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n10);
+                                                            //We create a file on the hard disc to safe the contents of the dictionary.
+                                                            using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save10.txt"))
+                                                                foreach (var item in listBox21.Items)
+                                                                {
+                                                                    SaveFile.WriteLine(item.ToString());
+                                                                }
+                                                            //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                                            NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                                            Key_Sequence.Clear();
+                                                            Word_Builder.Clear();
+                                                            x = 0;
+                                                            index = 0;
+                                                        }
+                                                        else
+                                                            //We populate a dictionary for the words starting with a character from button 11.
+                                                            if (Key_Sequence.Text.Substring(0, 1) == "11".ToString())
+                                                            {
+                                                                n11 = listBox22.Items.Count;
+                                                                listBox22.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n11);
+                                                                //We create a file on the hard disc to safe the contents of the dictionary.
+                                                                using (StreamWriter SaveFile = new StreamWriter(@"C:\\C# Assignment 2\\save11.txt"))
+                                                                    foreach (var item in listBox22.Items)
+                                                                    {
+                                                                        SaveFile.WriteLine(item.ToString());
+                                                                    }
+                                                                //By pressing the '000' button we append the text content of the WordBuilder TextBox into the NotePad and we clear the variable Str_KeyStrokes.
+                                                                NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                                                                Key_Sequence.Clear();
+                                                                Word_Builder.Clear();
+                                                                x = 0;
+                                                                index = 0;
+                                                            }
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)

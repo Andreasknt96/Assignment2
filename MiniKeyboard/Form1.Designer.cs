@@ -77,6 +77,17 @@
             this.withinTimer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.listBox12 = new System.Windows.Forms.ListBox();
+            this.listBox13 = new System.Windows.Forms.ListBox();
+            this.listBox14 = new System.Windows.Forms.ListBox();
+            this.listBox15 = new System.Windows.Forms.ListBox();
+            this.listBox16 = new System.Windows.Forms.ListBox();
+            this.listBox17 = new System.Windows.Forms.ListBox();
+            this.listBox18 = new System.Windows.Forms.ListBox();
+            this.listBox19 = new System.Windows.Forms.ListBox();
+            this.listBox20 = new System.Windows.Forms.ListBox();
+            this.listBox21 = new System.Windows.Forms.ListBox();
+            this.listBox22 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,35 +130,35 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveAsToolStripMenuItem.Text = "Save As";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -618,12 +629,111 @@
             // 
             this.saveFileDialog1.InitialDirectory = "c:\\\\";
             // 
+            // listBox12
+            // 
+            this.listBox12.FormattingEnabled = true;
+            this.listBox12.Location = new System.Drawing.Point(20, 445);
+            this.listBox12.Name = "listBox12";
+            this.listBox12.Size = new System.Drawing.Size(65, 30);
+            this.listBox12.TabIndex = 19;
+            // 
+            // listBox13
+            // 
+            this.listBox13.FormattingEnabled = true;
+            this.listBox13.Location = new System.Drawing.Point(91, 445);
+            this.listBox13.Name = "listBox13";
+            this.listBox13.Size = new System.Drawing.Size(65, 30);
+            this.listBox13.TabIndex = 20;
+            // 
+            // listBox14
+            // 
+            this.listBox14.FormattingEnabled = true;
+            this.listBox14.Location = new System.Drawing.Point(20, 409);
+            this.listBox14.Name = "listBox14";
+            this.listBox14.Size = new System.Drawing.Size(65, 30);
+            this.listBox14.TabIndex = 21;
+            // 
+            // listBox15
+            // 
+            this.listBox15.FormattingEnabled = true;
+            this.listBox15.Location = new System.Drawing.Point(91, 409);
+            this.listBox15.Name = "listBox15";
+            this.listBox15.Size = new System.Drawing.Size(65, 30);
+            this.listBox15.TabIndex = 22;
+            // 
+            // listBox16
+            // 
+            this.listBox16.FormattingEnabled = true;
+            this.listBox16.Location = new System.Drawing.Point(20, 373);
+            this.listBox16.Name = "listBox16";
+            this.listBox16.Size = new System.Drawing.Size(65, 30);
+            this.listBox16.TabIndex = 23;
+            // 
+            // listBox17
+            // 
+            this.listBox17.FormattingEnabled = true;
+            this.listBox17.Location = new System.Drawing.Point(91, 373);
+            this.listBox17.Name = "listBox17";
+            this.listBox17.Size = new System.Drawing.Size(65, 30);
+            this.listBox17.TabIndex = 24;
+            // 
+            // listBox18
+            // 
+            this.listBox18.FormattingEnabled = true;
+            this.listBox18.Location = new System.Drawing.Point(20, 337);
+            this.listBox18.Name = "listBox18";
+            this.listBox18.Size = new System.Drawing.Size(65, 30);
+            this.listBox18.TabIndex = 25;
+            // 
+            // listBox19
+            // 
+            this.listBox19.FormattingEnabled = true;
+            this.listBox19.Location = new System.Drawing.Point(91, 337);
+            this.listBox19.Name = "listBox19";
+            this.listBox19.Size = new System.Drawing.Size(65, 30);
+            this.listBox19.TabIndex = 26;
+            // 
+            // listBox20
+            // 
+            this.listBox20.FormattingEnabled = true;
+            this.listBox20.Location = new System.Drawing.Point(53, 301);
+            this.listBox20.Name = "listBox20";
+            this.listBox20.Size = new System.Drawing.Size(65, 30);
+            this.listBox20.TabIndex = 27;
+            // 
+            // listBox21
+            // 
+            this.listBox21.FormattingEnabled = true;
+            this.listBox21.Location = new System.Drawing.Point(20, 481);
+            this.listBox21.Name = "listBox21";
+            this.listBox21.Size = new System.Drawing.Size(65, 30);
+            this.listBox21.TabIndex = 28;
+            // 
+            // listBox22
+            // 
+            this.listBox22.FormattingEnabled = true;
+            this.listBox22.Location = new System.Drawing.Point(91, 481);
+            this.listBox22.Name = "listBox22";
+            this.listBox22.Size = new System.Drawing.Size(65, 30);
+            this.listBox22.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(596, 583);
+            this.Controls.Add(this.listBox22);
+            this.Controls.Add(this.listBox21);
+            this.Controls.Add(this.listBox20);
+            this.Controls.Add(this.listBox19);
+            this.Controls.Add(this.listBox18);
+            this.Controls.Add(this.listBox17);
+            this.Controls.Add(this.listBox16);
+            this.Controls.Add(this.listBox15);
+            this.Controls.Add(this.listBox14);
+            this.Controls.Add(this.listBox13);
+            this.Controls.Add(this.listBox12);
             this.Controls.Add(this.Key_Sequence);
             this.Controls.Add(this.listBox11);
             this.Controls.Add(this.listBox10);
@@ -706,6 +816,17 @@
         private System.Windows.Forms.Timer withinTimer;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ListBox listBox12;
+        private System.Windows.Forms.ListBox listBox13;
+        private System.Windows.Forms.ListBox listBox14;
+        private System.Windows.Forms.ListBox listBox15;
+        private System.Windows.Forms.ListBox listBox16;
+        private System.Windows.Forms.ListBox listBox17;
+        private System.Windows.Forms.ListBox listBox18;
+        private System.Windows.Forms.ListBox listBox19;
+        private System.Windows.Forms.ListBox listBox20;
+        private System.Windows.Forms.ListBox listBox21;
+        private System.Windows.Forms.ListBox listBox22;
 
     }
 }
