@@ -44,6 +44,7 @@ namespace MiniKeyboard
         public Form1()
         {
             InitializeComponent();
+            //We create the text file if it does not exist.
             string path1 = @"C:\\C# Assignment 2\\save1.txt";
             if (!File.Exists(path1))
             {
@@ -52,13 +53,191 @@ namespace MiniKeyboard
 
                 }
             }
+            //We create the text file if it does not exist.
+            string path2 = @"C:\\C# Assignment 2\\save2.txt";
+            if (!File.Exists(path2))
+            {
+                using (StreamWriter sw = File.CreateText(path2))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path3 = @"C:\\C# Assignment 2\\save3.txt";
+            if (!File.Exists(path3))
+            {
+                using (StreamWriter sw = File.CreateText(path3))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path4 = @"C:\\C# Assignment 2\\save4.txt";
+            if (!File.Exists(path4))
+            {
+                using (StreamWriter sw = File.CreateText(path4))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path5 = @"C:\\C# Assignment 2\\save5.txt";
+            if (!File.Exists(path5))
+            {
+                using (StreamWriter sw = File.CreateText(path5))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path6 = @"C:\\C# Assignment 2\\save6.txt";
+            if (!File.Exists(path6))
+            {
+                using (StreamWriter sw = File.CreateText(path6))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path7 = @"C:\\C# Assignment 2\\save7.txt";
+            if (!File.Exists(path7))
+            {
+                using (StreamWriter sw = File.CreateText(path7))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path8 = @"C:\\C# Assignment 2\\save8.txt";
+            if (!File.Exists(path8))
+            {
+                using (StreamWriter sw = File.CreateText(path8))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path9 = @"C:\\C# Assignment 2\\save9.txt";
+            if (!File.Exists(path9))
+            {
+                using (StreamWriter sw = File.CreateText(path9))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path10 = @"C:\\C# Assignment 2\\save10.txt";
+            if (!File.Exists(path10))
+            {
+                using (StreamWriter sw = File.CreateText(path10))
+                {
+
+                }
+            }
+            //We create the text file if it does not exist.
+            string path11 = @"C:\\C# Assignment 2\\save11.txt";
+            if (!File.Exists(path11))
+            {
+                using (StreamWriter sw = File.CreateText(path11))
+                {
+
+                }
+            }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr = new StreamReader(@"C:\\C# Assignment 2\\save1.txt"))
+
+            while (sr.Peek() != -1)
+            {
+                listBox12.Items.Add(sr.ReadLine());
+            }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr2 = new StreamReader(@"C:\\C# Assignment 2\\save2.txt"))
+
+                while (sr2.Peek() != -1)
+                {
+                    listBox13.Items.Add(sr2.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr3 = new StreamReader(@"C:\\C# Assignment 2\\save3.txt"))
+
+                while (sr3.Peek() != -1)
+                {
+                    listBox14.Items.Add(sr3.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr4 = new StreamReader(@"C:\\C# Assignment 2\\save4.txt"))
+
+                while (sr4.Peek() != -1)
+                {
+                    listBox15.Items.Add(sr4.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr5 = new StreamReader(@"C:\\C# Assignment 2\\save5.txt"))
+
+                while (sr5.Peek() != -1)
+                {
+                    listBox16.Items.Add(sr5.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr6 = new StreamReader(@"C:\\C# Assignment 2\\save6.txt"))
+
+                while (sr6.Peek() != -1)
+                {
+                    listBox17.Items.Add(sr6.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr7 = new StreamReader(@"C:\\C# Assignment 2\\save7.txt"))
+
+                while (sr7.Peek() != -1)
+                {
+                    listBox18.Items.Add(sr7.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr8 = new StreamReader(@"C:\\C# Assignment 2\\save8.txt"))
+
+                while (sr8.Peek() != -1)
+                {
+                    listBox19.Items.Add(sr8.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr9 = new StreamReader(@"C:\\C# Assignment 2\\save9.txt"))
+
+                while (sr9.Peek() != -1)
+                {
+                    listBox20.Items.Add(sr9.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr10 = new StreamReader(@"C:\\C# Assignment 2\\save10.txt"))
+
+                while (sr10.Peek() != -1)
+                {
+                    listBox21.Items.Add(sr10.ReadLine());
+                }
+
+            //We load the saved file into the listboxes.
+            using (StreamReader sr11 = new StreamReader(@"C:\\C# Assignment 2\\save11.txt"))
+
+                while (sr11.Peek() != -1)
+                {
+                    listBox22.Items.Add(sr11.ReadLine());
+                }
         }
 
         private void NotePad_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
             //Starting with the Mode Status Multi-Press.
@@ -281,7 +460,7 @@ namespace MiniKeyboard
                                                     }
                                                     else
                                                         //We populate a dictionary for the words starting with a character from button 10.
-                                                        if (Key_Sequence.Text.Substring(0, 1) == "10".ToString())
+                                                        if (Key_Sequence.Text.Substring(0, 1) == "*".ToString())
                                                         {
                                                             n10 = listBox21.Items.Count;
                                                             listBox21.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n10);
@@ -300,7 +479,7 @@ namespace MiniKeyboard
                                                         }
                                                         else
                                                             //We populate a dictionary for the words starting with a character from button 11.
-                                                            if (Key_Sequence.Text.Substring(0, 1) == "11".ToString())
+                                                            if (Key_Sequence.Text.Substring(0, 1) == "#".ToString())
                                                             {
                                                                 n11 = listBox22.Items.Count;
                                                                 listBox22.Items.Add(Key_Sequence.Text + " , " + Word_Builder.Text + " , " + n11);
