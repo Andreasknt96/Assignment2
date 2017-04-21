@@ -38,7 +38,6 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Word_Builder = new System.Windows.Forms.TextBox();
             this.Mode_Status = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -88,6 +87,8 @@
             this.listBox20 = new System.Windows.Forms.ListBox();
             this.listBox21 = new System.Windows.Forms.ListBox();
             this.listBox22 = new System.Windows.Forms.ListBox();
+            this.listBox23 = new System.Windows.Forms.ListBox();
+            this.Word_Builder = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -168,15 +169,6 @@
             this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.configureToolStripMenuItem.Text = "Configure";
             this.configureToolStripMenuItem.Click += new System.EventHandler(this.configureToolStripMenuItem_Click);
-            // 
-            // Word_Builder
-            // 
-            this.Word_Builder.Location = new System.Drawing.Point(3, 3);
-            this.Word_Builder.Multiline = true;
-            this.Word_Builder.Name = "Word_Builder";
-            this.Word_Builder.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.Word_Builder.Size = new System.Drawing.Size(191, 25);
-            this.Word_Builder.TabIndex = 2;
             // 
             // Mode_Status
             // 
@@ -274,6 +266,7 @@
             this.button16.TabIndex = 15;
             this.button16.Text = "Show Pred-\r\niction";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button15
             // 
@@ -284,6 +277,7 @@
             this.button15.TabIndex = 14;
             this.button15.Text = "Previous";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button14
             // 
@@ -717,12 +711,30 @@
             this.listBox22.Size = new System.Drawing.Size(65, 30);
             this.listBox22.TabIndex = 29;
             // 
+            // listBox23
+            // 
+            this.listBox23.FormattingEnabled = true;
+            this.listBox23.Location = new System.Drawing.Point(20, 201);
+            this.listBox23.Name = "listBox23";
+            this.listBox23.Size = new System.Drawing.Size(135, 82);
+            this.listBox23.Sorted = true;
+            this.listBox23.TabIndex = 30;
+            // 
+            // Word_Builder
+            // 
+            this.Word_Builder.Location = new System.Drawing.Point(4, 4);
+            this.Word_Builder.Name = "Word_Builder";
+            this.Word_Builder.Size = new System.Drawing.Size(189, 23);
+            this.Word_Builder.TabIndex = 4;
+            this.Word_Builder.Text = "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(596, 583);
+            this.Controls.Add(this.listBox23);
             this.Controls.Add(this.listBox22);
             this.Controls.Add(this.listBox21);
             this.Controls.Add(this.listBox20);
@@ -777,7 +789,6 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
-        private System.Windows.Forms.TextBox Word_Builder;
         private System.Windows.Forms.TextBox Mode_Status;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -827,6 +838,8 @@
         private System.Windows.Forms.ListBox listBox20;
         private System.Windows.Forms.ListBox listBox21;
         private System.Windows.Forms.ListBox listBox22;
+        private System.Windows.Forms.ListBox listBox23;
+        private System.Windows.Forms.RichTextBox Word_Builder;
 
     }
 }

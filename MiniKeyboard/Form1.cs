@@ -44,6 +44,8 @@ namespace MiniKeyboard
         public Form1()
         {
             InitializeComponent();
+            RichTextBox Word_Builder = new RichTextBox();
+
             //We create the text file if it does not exist.
             string path1 = @"C:\\C# Assignment 2\\save1.txt";
             if (!File.Exists(path1))
@@ -4662,6 +4664,69 @@ namespace MiniKeyboard
             //We make the firstvisit true and the buttonpressed to false.
             boolFirstVisit = true;
             boolsButtonPressed[intWhichButton] = false;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (Mode_Status.Text == "Prediction")
+            {
+                string str2 = Key_Sequence.Text.ToString();
+                int l = str2.Length;
+                //We select all the items in listbox23 one at a time.
+                if (item < listBox23.Items.Count)
+                {
+                    //To avoid the possibility to have the item equals to -1.
+                    if (item == 0)
+                    {
+                        listBox23.SetSelected(listBox23.Items.Count - 1, true);
+                    }
+                    else
+                        item--;
+                    listBox23.SetSelected(item, true);
+                    string str = listBox23.SelectedItem.ToString();
+                    //We split the string of the selected item to get the word in the dictionary and we dispay it to the Word_Builder textbox.
+                    string str1 = str.Split(',')[1];
+                    Word_Builder.Text = str1.ToString();
+                    //By selecting a range of the string we change the color.
+                    Word_Builder.SelectionStart = 0;
+                    Word_Builder.SelectionLength = 1;
+                    Word_Builder.SelectionColor = Color.Black;
+                    Word_Builder.SelectionStart = l;
+                    Word_Builder.SelectionLength = 100;
+                    Word_Builder.SelectionColor = Color.Red;
+                }
+                else
+                    item = 0;
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (Mode_Status.Text == "Prediction")
+            {
+                //When there is no items in the listbox23 we load the prediction items.
+                if (listBox23.Items.Count == 0)
+                {
+                    string str2 = Key_Sequence.Text.ToString();
+                    //If the key_sequence starts with 4 we select the items from the button4 dictionary.
+                    if (str2.StartsWith("4"))
+                    {
+                        //We go through all the items and select the one that starts with the key sequence and load them into the predixtion listbox.
+                        for (int item = 0; item < listBox15.Items.Count; item++)
+                        {
+                            string str4 = Word_Builder.Text.ToString();
+                            listBox15.SetSelected(item, true);
+                            string str = listBox15.SelectedItem.ToString();
+                            string str1 = str.Split(',')[0];
+                            string str3 = str.Split(',')[1];
+                            if (str1.StartsWith(str2))
+                            {
+                                listBox23.Items.Add(str1 + "," + str3);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
