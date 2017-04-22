@@ -4830,11 +4830,11 @@ namespace MiniKeyboard
                     //We split the string of the selected item to get the word in the dictionary and we dispay it to the Word_Builder textbox.
                     string str1 = str.Split(',')[1];
                     Word_Builder.Text = str1.ToString();
-                    //By selecting a range of the string we change the color.
-                    Word_Builder.SelectionStart = 0;
-                    Word_Builder.SelectionLength = 1;
+                    //We change the colour of the string.
+                    Word_Builder.SelectionStart = 1;
+                    Word_Builder.SelectionLength = l;
                     Word_Builder.SelectionColor = Color.Black;
-                    Word_Builder.SelectionStart = l;
+                    Word_Builder.SelectionStart = l + 1;
                     Word_Builder.SelectionLength = 100;
                     Word_Builder.SelectionColor = Color.Red;
                 }
@@ -4853,6 +4853,37 @@ namespace MiniKeyboard
                 Word_Builder.Clear();
                 Key_Sequence.Clear();
                 Char_Sequence.Clear();
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (Mode_Status.Text == "Prediction")
+            {
+                string str2 = Key_Sequence.Text.ToString();
+                int l = str2.Length;
+                if (item < listBox23.Items.Count)
+                {
+                    //If the selected item is the last we select the last to avoid an error.
+                    if (item == listBox23.Items.Count - 1)
+                        listBox23.SetSelected(listBox23.Items.Count - 1, true);
+                    else
+                        item++;
+                    listBox23.SetSelected(item, true);
+                    string str = listBox23.SelectedItem.ToString();
+                    //We split the string of the selected item to get the word in the dictionary and we dispay it to the Word_Builder textbox.
+                    string str1 = str.Split(',')[1];
+                    Word_Builder.Text = str1.ToString();
+                    //We change the colour of the string.
+                    Word_Builder.SelectionStart = 1;
+                    Word_Builder.SelectionLength = l;
+                    Word_Builder.SelectionColor = Color.Black;
+                    Word_Builder.SelectionStart = l + 1;
+                    Word_Builder.SelectionLength = 100;
+                    Word_Builder.SelectionColor = Color.Red;
+                }
+                else
+                    item = 0;
             }
         }
     }
