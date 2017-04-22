@@ -278,9 +278,17 @@ namespace MiniKeyboard
             //Changing the mode to Prediction.
             if (Mode_Status.Text == "Prediction")
             {
+                //We take the length of the key_sequence text to substring the Word_Builder.
+                string str2 = Key_Sequence.Text.ToString();
+                int l = str2.Length;
                 //We append the contents of the Word_Builder textbox into the NotePad and clear the Word_Builder textbox.
-                NotePad.AppendText(Word_Builder.Text.ToString() + " ");
+                NotePad.AppendText(Word_Builder.Text.Substring(0, l) + " ");
                 Word_Builder.Clear();
+                Key_Sequence.Clear();
+                Char_Sequence.Clear();
+                listBox23.Items.Clear();
+                x = 0;
+                index = 0;
             }
             else
             {
@@ -900,11 +908,14 @@ namespace MiniKeyboard
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //We are checking if a button was pressed before and that is not number 4 .
+            //We retrieve the contents of the Word_Builder before the Prediction from the saved variable Char_sequence.
+            Word_Builder.Text = Char_Sequence.Text.ToString();
+            //We are checking if a button was pressed before and that is not number 4.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 4)
             {
                 switch (intMyListIndex)
                 {
+
                     case 1:
                         //We are checking whether the button which was pressed before is already selected.
                         if (Word_Builder.Text.EndsWith(listBox1.SelectedItem.ToString()))
@@ -1211,13 +1222,15 @@ namespace MiniKeyboard
             withinTimer.Enabled = true;
             withinTimer.Interval = intIntervalRequired;
 
-            //We select an item from the listBox4 and appended to Word_Builder textbox for the first character.
+            //We select an item from the listBox1 and appended to Word_Builder textbox for the first character.
             if (x == 0)
             {
                 if (index <= 6)
                 {
                     listBox4.SetSelected(index, true);
                     Word_Builder.Text = listBox4.SelectedItem.ToString();
+                    //We copy the contents of the word_builder textbox into the char_sequence textbox.
+                    Char_Sequence.Text = listBox4.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -1228,26 +1241,28 @@ namespace MiniKeyboard
                 }
             }
             else
-            {
+            { 
                 if (x != 0)
                 {
-                    //We select the first item from the listbox4 and append it to the second position of the WordBuilder textbox.
+                    //We select the first item from the listbox1 and append it to the second position of the WordBuilder textbox.
                     if (index == 0)
                     {
                         listBox4.SetSelected(index, true);
                         Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox4.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 6)
                         {
                             //We remove the last character of the Word_Builder text.
-                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length -1);
-                            //Selecting the other items fromt he listbox4 by increasing the index and append them to the WordBuilder textbox.
+                            Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
+                            //Selecting the other items fromt he listbox1 by increasing the index and append them to the WordBuilder textbox.
                             listBox4.SetSelected(index, true);
                             Word_Builder.AppendText(listBox4.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox4.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -1257,10 +1272,71 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
                 }
-            }
+                if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("4"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox15.Items.Count; item++)
+                            {
+                                listBox15.SetSelected(item, true);
+                                string str = listBox15.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l+1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                    }
+                }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1335,6 +1411,8 @@ namespace MiniKeyboard
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //We retrieve the contents of the Word_Builder before the Prediction from the saved variable Char_sequence.
+            Word_Builder.Text = Char_Sequence.Text.ToString();
             //We are checking if a button was pressed before and that is not number 1.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 1)
             {
@@ -1654,6 +1732,8 @@ namespace MiniKeyboard
                 {
                     listBox1.SetSelected(index, true);
                     Word_Builder.Text = listBox1.SelectedItem.ToString();
+                    //We copy the contents of the word_builder textbox into the char_sequence textbox.
+                    Char_Sequence.Text = listBox1.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -1664,7 +1744,7 @@ namespace MiniKeyboard
                 }
             }
             else
-            {
+            { 
                 if (x != 0)
                 {
                     //We select the first item from the listbox1 and append it to the second position of the WordBuilder textbox.
@@ -1672,18 +1752,20 @@ namespace MiniKeyboard
                     {
                         listBox1.SetSelected(index, true);
                         Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox1.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 8)
                         {
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                             //Selecting the other items fromt he listbox1 by increasing the index and append them to the WordBuilder textbox.
                             listBox1.SetSelected(index, true);
                             Word_Builder.AppendText(listBox1.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox1.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -1693,10 +1775,71 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
                 }
-            }
+                if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("1"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox12.Items.Count; item ++)
+                            {
+                                listBox12.SetSelected(item, true);
+                                string str = listBox12.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l+1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                    }
+                }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -4704,28 +4847,12 @@ namespace MiniKeyboard
         {
             if (Mode_Status.Text == "Prediction")
             {
-                //When there is no items in the listbox23 we load the prediction items.
-                if (listBox23.Items.Count == 0)
-                {
-                    string str2 = Key_Sequence.Text.ToString();
-                    //If the key_sequence starts with 4 we select the items from the button4 dictionary.
-                    if (str2.StartsWith("4"))
-                    {
-                        //We go through all the items and select the one that starts with the key sequence and load them into the predixtion listbox.
-                        for (int item = 0; item < listBox15.Items.Count; item++)
-                        {
-                            string str4 = Word_Builder.Text.ToString();
-                            listBox15.SetSelected(item, true);
-                            string str = listBox15.SelectedItem.ToString();
-                            string str1 = str.Split(',')[0];
-                            string str3 = str.Split(',')[1];
-                            if (str1.StartsWith(str2))
-                            {
-                                listBox23.Items.Add(str1 + "," + str3);
-                            }
-                        }
-                    }
-                }
+                //We append the content of the Word_builder into the Notepad and clearing all the textboxes.
+                NotePad.AppendText(Word_Builder.Text.ToString() + "");
+                listBox23.Items.Clear();
+                Word_Builder.Clear();
+                Key_Sequence.Clear();
+                Char_Sequence.Clear();
             }
         }
     }

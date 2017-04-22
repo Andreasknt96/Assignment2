@@ -64,7 +64,6 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.listBox6 = new System.Windows.Forms.ListBox();
             this.listBox7 = new System.Windows.Forms.ListBox();
@@ -79,7 +78,6 @@
             this.listBox12 = new System.Windows.Forms.ListBox();
             this.listBox13 = new System.Windows.Forms.ListBox();
             this.listBox14 = new System.Windows.Forms.ListBox();
-            this.listBox15 = new System.Windows.Forms.ListBox();
             this.listBox16 = new System.Windows.Forms.ListBox();
             this.listBox17 = new System.Windows.Forms.ListBox();
             this.listBox18 = new System.Windows.Forms.ListBox();
@@ -87,6 +85,9 @@
             this.listBox20 = new System.Windows.Forms.ListBox();
             this.listBox21 = new System.Windows.Forms.ListBox();
             this.listBox22 = new System.Windows.Forms.ListBox();
+            this.Char_Sequence = new System.Windows.Forms.TextBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listBox15 = new System.Windows.Forms.ListBox();
             this.listBox23 = new System.Windows.Forms.ListBox();
             this.Word_Builder = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
@@ -484,22 +485,6 @@
             this.listBox3.Size = new System.Drawing.Size(35, 43);
             this.listBox3.TabIndex = 9;
             // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
-            "g",
-            "h",
-            "i",
-            "4",
-            "G",
-            "H",
-            "I"});
-            this.listBox4.Location = new System.Drawing.Point(456, 357);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(50, 43);
-            this.listBox4.TabIndex = 10;
-            // 
             // listBox5
             // 
             this.listBox5.FormattingEnabled = true;
@@ -647,14 +632,6 @@
             this.listBox14.Size = new System.Drawing.Size(65, 30);
             this.listBox14.TabIndex = 21;
             // 
-            // listBox15
-            // 
-            this.listBox15.FormattingEnabled = true;
-            this.listBox15.Location = new System.Drawing.Point(91, 409);
-            this.listBox15.Name = "listBox15";
-            this.listBox15.Size = new System.Drawing.Size(65, 30);
-            this.listBox15.TabIndex = 22;
-            // 
             // listBox16
             // 
             this.listBox16.FormattingEnabled = true;
@@ -711,20 +688,51 @@
             this.listBox22.Size = new System.Drawing.Size(65, 30);
             this.listBox22.TabIndex = 29;
             // 
+            // Char_Sequence
+            // 
+            this.Char_Sequence.Location = new System.Drawing.Point(465, 227);
+            this.Char_Sequence.Name = "Char_Sequence";
+            this.Char_Sequence.Size = new System.Drawing.Size(119, 20);
+            this.Char_Sequence.TabIndex = 32;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Items.AddRange(new object[] {
+            "g",
+            "h",
+            "i",
+            "4",
+            "G",
+            "H",
+            "I"});
+            this.listBox4.Location = new System.Drawing.Point(458, 360);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(49, 43);
+            this.listBox4.TabIndex = 33;
+            // 
+            // listBox15
+            // 
+            this.listBox15.FormattingEnabled = true;
+            this.listBox15.Location = new System.Drawing.Point(91, 409);
+            this.listBox15.Name = "listBox15";
+            this.listBox15.Size = new System.Drawing.Size(65, 30);
+            this.listBox15.TabIndex = 34;
+            // 
             // listBox23
             // 
             this.listBox23.FormattingEnabled = true;
-            this.listBox23.Location = new System.Drawing.Point(20, 201);
+            this.listBox23.Location = new System.Drawing.Point(4, 188);
             this.listBox23.Name = "listBox23";
-            this.listBox23.Size = new System.Drawing.Size(135, 82);
+            this.listBox23.Size = new System.Drawing.Size(166, 95);
             this.listBox23.Sorted = true;
-            this.listBox23.TabIndex = 30;
+            this.listBox23.TabIndex = 35;
             // 
             // Word_Builder
             // 
-            this.Word_Builder.Location = new System.Drawing.Point(4, 4);
+            this.Word_Builder.Location = new System.Drawing.Point(5, 3);
             this.Word_Builder.Name = "Word_Builder";
-            this.Word_Builder.Size = new System.Drawing.Size(189, 23);
+            this.Word_Builder.Size = new System.Drawing.Size(190, 25);
             this.Word_Builder.TabIndex = 4;
             this.Word_Builder.Text = "";
             // 
@@ -735,6 +743,9 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(596, 583);
             this.Controls.Add(this.listBox23);
+            this.Controls.Add(this.listBox15);
+            this.Controls.Add(this.listBox4);
+            this.Controls.Add(this.Char_Sequence);
             this.Controls.Add(this.listBox22);
             this.Controls.Add(this.listBox21);
             this.Controls.Add(this.listBox20);
@@ -742,7 +753,6 @@
             this.Controls.Add(this.listBox18);
             this.Controls.Add(this.listBox17);
             this.Controls.Add(this.listBox16);
-            this.Controls.Add(this.listBox15);
             this.Controls.Add(this.listBox14);
             this.Controls.Add(this.listBox13);
             this.Controls.Add(this.listBox12);
@@ -754,7 +764,6 @@
             this.Controls.Add(this.listBox7);
             this.Controls.Add(this.listBox6);
             this.Controls.Add(this.listBox5);
-            this.Controls.Add(this.listBox4);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
@@ -815,7 +824,6 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.ListBox listBox6;
         private System.Windows.Forms.ListBox listBox7;
@@ -830,7 +838,6 @@
         private System.Windows.Forms.ListBox listBox12;
         private System.Windows.Forms.ListBox listBox13;
         private System.Windows.Forms.ListBox listBox14;
-        private System.Windows.Forms.ListBox listBox15;
         private System.Windows.Forms.ListBox listBox16;
         private System.Windows.Forms.ListBox listBox17;
         private System.Windows.Forms.ListBox listBox18;
@@ -838,6 +845,9 @@
         private System.Windows.Forms.ListBox listBox20;
         private System.Windows.Forms.ListBox listBox21;
         private System.Windows.Forms.ListBox listBox22;
+        private System.Windows.Forms.TextBox Char_Sequence;
+        private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.ListBox listBox15;
         private System.Windows.Forms.ListBox listBox23;
         private System.Windows.Forms.RichTextBox Word_Builder;
 
