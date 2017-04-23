@@ -1276,20 +1276,73 @@ namespace MiniKeyboard
                         }
                     }
                 }
-                if (Mode_Status.Text == "Prediction")
+            if (Mode_Status.Text == "Prediction")
+            {
+                //We clear listbox23 to load another prediction list.
+                listBox23.Items.Clear();
+                if (listBox23.Items.Count == 0)
                 {
-                    //We clear listbox23 to load another prediction list.
-                    listBox23.Items.Clear();
-                    if (listBox23.Items.Count == 0)
+                    string str2 = Key_Sequence.Text.ToString();
+                    if (str2.StartsWith("1"))
                     {
-                        string str2 = Key_Sequence.Text.ToString();
-                        if (str2.StartsWith("4"))
+                        //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                        for (int item = 0; item < listBox12.Items.Count; item++)
                         {
-                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
-                            for (int item = 0; item < listBox15.Items.Count; item++)
+                            listBox12.SetSelected(item, true);
+                            string str = listBox12.SelectedItem.ToString();
+                            string str1 = str.Split(',')[0];
+                            string str3 = str.Split(',')[1];
+                            if (str1.StartsWith(str2))
                             {
-                                listBox15.SetSelected(item, true);
-                                string str = listBox15.SelectedItem.ToString();
+                                listBox23.Items.Add(str1 + "," + str3);
+                            }
+                        }
+                        //Go through the prediction list to find the most frequent used word.
+                        if (listBox23.Items.Count >= 1)
+                        {
+                            string st1 = default(string);
+                            string st2 = default(string);
+                            string st3 = default(string);
+                            int l1 = default(int);
+                            int l2 = default(int);
+                            foreach (string var_st1 in listBox23.Items)
+                            {
+                                st1 = var_st1;
+                                foreach (string var_st2 in listBox23.Items)
+                                {
+                                    st2 = var_st2;
+                                    if (st1 == st2)
+                                    {
+                                        l1++;
+                                    }
+                                }
+                                if (l1 > l2)
+                                {
+                                    l2 = l1;
+                                    st3 = st1;
+                                }
+                                l1 = 0;
+                            }
+                            int l = str2.Length;
+                            string str1 = st3.Split(',')[1];
+                            Word_Builder.Text = str1.ToString();
+                            //We change the colour of the string.
+                            Word_Builder.SelectionStart = 1;
+                            Word_Builder.SelectionLength = l;
+                            Word_Builder.SelectionColor = Color.Black;
+                            Word_Builder.SelectionStart = l + 1;
+                            Word_Builder.SelectionLength = 100;
+                            Word_Builder.SelectionColor = Color.Red;
+                        }
+                    }
+                    else
+                        if (str2.StartsWith("2"))
+                        {
+                            //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox13.Items.Count; item++)
+                            {
+                                listBox13.SetSelected(item, true);
+                                string str = listBox13.SelectedItem.ToString();
                                 string str1 = str.Split(',')[0];
                                 string str3 = str.Split(',')[1];
                                 if (str1.StartsWith(str2))
@@ -1330,13 +1383,490 @@ namespace MiniKeyboard
                                 Word_Builder.SelectionStart = 1;
                                 Word_Builder.SelectionLength = l;
                                 Word_Builder.SelectionColor = Color.Black;
-                                Word_Builder.SelectionStart = l+1;
+                                Word_Builder.SelectionStart = l + 1;
                                 Word_Builder.SelectionLength = 100;
                                 Word_Builder.SelectionColor = Color.Red;
                             }
                         }
-                    }
+                        else
+                            if (str2.StartsWith("3"))
+                            {
+                                //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox14.Items.Count; item++)
+                                {
+                                    listBox14.SetSelected(item, true);
+                                    string str = listBox14.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("4"))
+                                {
+                                    //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox15.Items.Count; item++)
+                                    {
+                                        listBox15.SetSelected(item, true);
+                                        string str = listBox15.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("5"))
+                                    {
+                                        //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox16.Items.Count; item++)
+                                        {
+                                            listBox16.SetSelected(item, true);
+                                            string str = listBox16.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                    else
+                                        if (str2.StartsWith("6"))
+                                        {
+                                            //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox17.Items.Count; item++)
+                                            {
+                                                listBox17.SetSelected(item, true);
+                                                string str = listBox17.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("7"))
+                                            {
+                                                //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox18.Items.Count; item++)
+                                                {
+                                                    listBox18.SetSelected(item, true);
+                                                    string str = listBox18.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                            else
+                                                if (str2.StartsWith("8"))
+                                                {
+                                                    //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox19.Items.Count; item++)
+                                                    {
+                                                        listBox19.SetSelected(item, true);
+                                                        string str = listBox19.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                                else
+                                                    if (str2.StartsWith("9"))
+                                                    {
+                                                        //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox20.Items.Count; item++)
+                                                        {
+                                                            listBox20.SetSelected(item, true);
+                                                            string str = listBox20.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                    else
+                                                        if (str2.StartsWith("*"))
+                                                        {
+                                                            //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox21.Items.Count; item++)
+                                                            {
+                                                                listBox21.SetSelected(item, true);
+                                                                string str = listBox21.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                        else
+                                                            if (str2.StartsWith("#"))
+                                                            {
+                                                                //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                {
+                                                                    listBox22.SetSelected(item, true);
+                                                                    string str = listBox22.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
                 }
+            }
         }
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1838,12 +2368,543 @@ namespace MiniKeyboard
                                 Word_Builder.SelectionColor = Color.Red;
                             }
                         }
+                        else
+                            if (str2.StartsWith("2"))
+                            {
+                                //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox13.Items.Count; item++)
+                                {
+                                    listBox13.SetSelected(item, true);
+                                    string str = listBox13.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("3"))
+                                {
+                                    //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox14.Items.Count; item++)
+                                    {
+                                        listBox14.SetSelected(item, true);
+                                        string str = listBox14.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("4"))
+                                    {
+                                        //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox15.Items.Count; item++)
+                                        {
+                                            listBox15.SetSelected(item, true);
+                                            string str = listBox15.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                else
+                                        if (str2.StartsWith("5"))
+                                        {
+                                            //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox16.Items.Count; item++)
+                                            {
+                                                listBox16.SetSelected(item, true);
+                                                string str = listBox16.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("6"))
+                                            {
+                                                //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox17.Items.Count; item++)
+                                                {
+                                                    listBox17.SetSelected(item, true);
+                                                    string str = listBox17.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                        else
+                                                if (str2.StartsWith("7"))
+                                                {
+                                                    //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox18.Items.Count; item++)
+                                                    {
+                                                        listBox18.SetSelected(item, true);
+                                                        string str = listBox18.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                            else
+                                                    if (str2.StartsWith("8"))
+                                                    {
+                                                        //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox19.Items.Count; item++)
+                                                        {
+                                                            listBox19.SetSelected(item, true);
+                                                            string str = listBox19.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                else
+                                                        if (str2.StartsWith("9"))
+                                                        {
+                                                            //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox20.Items.Count; item++)
+                                                            {
+                                                                listBox20.SetSelected(item, true);
+                                                                string str = listBox20.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                      else
+                                                            if (str2.StartsWith("*"))
+                                                            {
+                                                                //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox21.Items.Count; item++)
+                                                                {
+                                                                    listBox21.SetSelected(item, true);
+                                                                    string str = listBox21.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
+                                                           else
+                                                                if (str2.StartsWith("#"))
+                                                                {
+                                                                    //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                    for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                    {
+                                                                        listBox22.SetSelected(item, true);
+                                                                        string str = listBox22.SelectedItem.ToString();
+                                                                        string str1 = str.Split(',')[0];
+                                                                        string str3 = str.Split(',')[1];
+                                                                        if (str1.StartsWith(str2))
+                                                                        {
+                                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                                        }
+                                                                    }
+                                                                    //Go through the prediction list to find the most frequent used word.
+                                                                    if (listBox23.Items.Count >= 1)
+                                                                    {
+                                                                        string st1 = default(string);
+                                                                        string st2 = default(string);
+                                                                        string st3 = default(string);
+                                                                        int l1 = default(int);
+                                                                        int l2 = default(int);
+                                                                        foreach (string var_st1 in listBox23.Items)
+                                                                        {
+                                                                            st1 = var_st1;
+                                                                            foreach (string var_st2 in listBox23.Items)
+                                                                            {
+                                                                                st2 = var_st2;
+                                                                                if (st1 == st2)
+                                                                                {
+                                                                                    l1++;
+                                                                                }
+                                                                            }
+                                                                            if (l1 > l2)
+                                                                            {
+                                                                                l2 = l1;
+                                                                                st3 = st1;
+                                                                            }
+                                                                            l1 = 0;
+                                                                        }
+                                                                        int l = str2.Length;
+                                                                        string str1 = st3.Split(',')[1];
+                                                                        Word_Builder.Text = str1.ToString();
+                                                                        //We change the colour of the string.
+                                                                        Word_Builder.SelectionStart = 1;
+                                                                        Word_Builder.SelectionLength = l;
+                                                                        Word_Builder.SelectionColor = Color.Black;
+                                                                        Word_Builder.SelectionStart = l + 1;
+                                                                        Word_Builder.SelectionLength = 100;
+                                                                        Word_Builder.SelectionColor = Color.Red;
+                                                                    }
+                                                                }
                     }
                 }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Word_Builder.Text = Char_Sequence.Text.ToString();
             //We are checking if a button was pressed before and that is not number 3.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 3)
             {
@@ -2162,6 +3223,7 @@ namespace MiniKeyboard
                 {
                     listBox3.SetSelected(index, true);
                     Word_Builder.Text = listBox3.SelectedItem.ToString();
+                    Char_Sequence.Text = listBox3.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -2180,18 +3242,20 @@ namespace MiniKeyboard
                     {
                         listBox3.SetSelected(index, true);
                         Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox3.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 8)
                         {
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                             //Selecting the other items fromt he listbox3 by increasing the index and append them to the WordBuilder textbox.
                             listBox3.SetSelected(index, true);
                             Word_Builder.AppendText(listBox3.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox3.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2201,14 +3265,606 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
+                }
+                if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("1"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox12.Items.Count; item++)
+                            {
+                                listBox12.SetSelected(item, true);
+                                string str = listBox12.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l + 1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                        else
+                            if (str2.StartsWith("2"))
+                            {
+                                //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox13.Items.Count; item++)
+                                {
+                                    listBox13.SetSelected(item, true);
+                                    string str = listBox13.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("3"))
+                                {
+                                    //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox14.Items.Count; item++)
+                                    {
+                                        listBox14.SetSelected(item, true);
+                                        string str = listBox14.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("4"))
+                                    {
+                                        //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox15.Items.Count; item++)
+                                        {
+                                            listBox15.SetSelected(item, true);
+                                            string str = listBox15.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                    else
+                                        if (str2.StartsWith("5"))
+                                        {
+                                            //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox16.Items.Count; item++)
+                                            {
+                                                listBox16.SetSelected(item, true);
+                                                string str = listBox16.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("6"))
+                                            {
+                                                //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox17.Items.Count; item++)
+                                                {
+                                                    listBox17.SetSelected(item, true);
+                                                    string str = listBox17.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                            else
+                                                if (str2.StartsWith("7"))
+                                                {
+                                                    //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox18.Items.Count; item++)
+                                                    {
+                                                        listBox18.SetSelected(item, true);
+                                                        string str = listBox18.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                                else
+                                                    if (str2.StartsWith("8"))
+                                                    {
+                                                        //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox19.Items.Count; item++)
+                                                        {
+                                                            listBox19.SetSelected(item, true);
+                                                            string str = listBox19.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                    else
+                                                        if (str2.StartsWith("9"))
+                                                        {
+                                                            //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox20.Items.Count; item++)
+                                                            {
+                                                                listBox20.SetSelected(item, true);
+                                                                string str = listBox20.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                        else
+                                                            if (str2.StartsWith("*"))
+                                                            {
+                                                                //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox21.Items.Count; item++)
+                                                                {
+                                                                    listBox21.SetSelected(item, true);
+                                                                    string str = listBox21.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
+                                                            else
+                                                                if (str2.StartsWith("#"))
+                                                                {
+                                                                    //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                    for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                    {
+                                                                        listBox22.SetSelected(item, true);
+                                                                        string str = listBox22.SelectedItem.ToString();
+                                                                        string str1 = str.Split(',')[0];
+                                                                        string str3 = str.Split(',')[1];
+                                                                        if (str1.StartsWith(str2))
+                                                                        {
+                                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                                        }
+                                                                    }
+                                                                    //Go through the prediction list to find the most frequent used word.
+                                                                    if (listBox23.Items.Count >= 1)
+                                                                    {
+                                                                        string st1 = default(string);
+                                                                        string st2 = default(string);
+                                                                        string st3 = default(string);
+                                                                        int l1 = default(int);
+                                                                        int l2 = default(int);
+                                                                        foreach (string var_st1 in listBox23.Items)
+                                                                        {
+                                                                            st1 = var_st1;
+                                                                            foreach (string var_st2 in listBox23.Items)
+                                                                            {
+                                                                                st2 = var_st2;
+                                                                                if (st1 == st2)
+                                                                                {
+                                                                                    l1++;
+                                                                                }
+                                                                            }
+                                                                            if (l1 > l2)
+                                                                            {
+                                                                                l2 = l1;
+                                                                                st3 = st1;
+                                                                            }
+                                                                            l1 = 0;
+                                                                        }
+                                                                        int l = str2.Length;
+                                                                        string str1 = st3.Split(',')[1];
+                                                                        Word_Builder.Text = str1.ToString();
+                                                                        //We change the colour of the string.
+                                                                        Word_Builder.SelectionStart = 1;
+                                                                        Word_Builder.SelectionLength = l;
+                                                                        Word_Builder.SelectionColor = Color.Black;
+                                                                        Word_Builder.SelectionStart = l + 1;
+                                                                        Word_Builder.SelectionLength = 100;
+                                                                        Word_Builder.SelectionColor = Color.Red;
+                                                                    }
+                                                                }
                 }
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Word_Builder.Text = Char_Sequence.Text.ToString();
             //We are checking if a button was pressed before and that is not number 5.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 5)
             {
@@ -2527,6 +4183,7 @@ namespace MiniKeyboard
                 {
                     listBox5.SetSelected(index, true);
                     Word_Builder.Text = listBox5.SelectedItem.ToString();
+                    Char_Sequence.Text = listBox5.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -2545,18 +4202,20 @@ namespace MiniKeyboard
                     {
                         listBox5.SetSelected(index, true);
                         Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox5.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 6)
                         {
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                             //Selecting the other items fromt he listbox5 by increasing the index and append them to the WordBuilder textbox.
                             listBox5.SetSelected(index, true);
                             Word_Builder.AppendText(listBox5.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox5.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2566,14 +4225,606 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
+                }
+                if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("1"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox12.Items.Count; item++)
+                            {
+                                listBox12.SetSelected(item, true);
+                                string str = listBox12.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l + 1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                        else
+                            if (str2.StartsWith("2"))
+                            {
+                                //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox13.Items.Count; item++)
+                                {
+                                    listBox13.SetSelected(item, true);
+                                    string str = listBox13.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("3"))
+                                {
+                                    //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox14.Items.Count; item++)
+                                    {
+                                        listBox14.SetSelected(item, true);
+                                        string str = listBox14.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("4"))
+                                    {
+                                        //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox15.Items.Count; item++)
+                                        {
+                                            listBox15.SetSelected(item, true);
+                                            string str = listBox15.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                    else
+                                        if (str2.StartsWith("5"))
+                                        {
+                                            //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox16.Items.Count; item++)
+                                            {
+                                                listBox16.SetSelected(item, true);
+                                                string str = listBox16.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("6"))
+                                            {
+                                                //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox17.Items.Count; item++)
+                                                {
+                                                    listBox17.SetSelected(item, true);
+                                                    string str = listBox17.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                            else
+                                                if (str2.StartsWith("7"))
+                                                {
+                                                    //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox18.Items.Count; item++)
+                                                    {
+                                                        listBox18.SetSelected(item, true);
+                                                        string str = listBox18.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                                else
+                                                    if (str2.StartsWith("8"))
+                                                    {
+                                                        //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox19.Items.Count; item++)
+                                                        {
+                                                            listBox19.SetSelected(item, true);
+                                                            string str = listBox19.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                    else
+                                                        if (str2.StartsWith("9"))
+                                                        {
+                                                            //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox20.Items.Count; item++)
+                                                            {
+                                                                listBox20.SetSelected(item, true);
+                                                                string str = listBox20.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                        else
+                                                            if (str2.StartsWith("*"))
+                                                            {
+                                                                //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox21.Items.Count; item++)
+                                                                {
+                                                                    listBox21.SetSelected(item, true);
+                                                                    string str = listBox21.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
+                                                            else
+                                                                if (str2.StartsWith("#"))
+                                                                {
+                                                                    //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                    for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                    {
+                                                                        listBox22.SetSelected(item, true);
+                                                                        string str = listBox22.SelectedItem.ToString();
+                                                                        string str1 = str.Split(',')[0];
+                                                                        string str3 = str.Split(',')[1];
+                                                                        if (str1.StartsWith(str2))
+                                                                        {
+                                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                                        }
+                                                                    }
+                                                                    //Go through the prediction list to find the most frequent used word.
+                                                                    if (listBox23.Items.Count >= 1)
+                                                                    {
+                                                                        string st1 = default(string);
+                                                                        string st2 = default(string);
+                                                                        string st3 = default(string);
+                                                                        int l1 = default(int);
+                                                                        int l2 = default(int);
+                                                                        foreach (string var_st1 in listBox23.Items)
+                                                                        {
+                                                                            st1 = var_st1;
+                                                                            foreach (string var_st2 in listBox23.Items)
+                                                                            {
+                                                                                st2 = var_st2;
+                                                                                if (st1 == st2)
+                                                                                {
+                                                                                    l1++;
+                                                                                }
+                                                                            }
+                                                                            if (l1 > l2)
+                                                                            {
+                                                                                l2 = l1;
+                                                                                st3 = st1;
+                                                                            }
+                                                                            l1 = 0;
+                                                                        }
+                                                                        int l = str2.Length;
+                                                                        string str1 = st3.Split(',')[1];
+                                                                        Word_Builder.Text = str1.ToString();
+                                                                        //We change the colour of the string.
+                                                                        Word_Builder.SelectionStart = 1;
+                                                                        Word_Builder.SelectionLength = l;
+                                                                        Word_Builder.SelectionColor = Color.Black;
+                                                                        Word_Builder.SelectionStart = l + 1;
+                                                                        Word_Builder.SelectionLength = 100;
+                                                                        Word_Builder.SelectionColor = Color.Red;
+                                                                    }
+                                                                }
                 }
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            Word_Builder.Text = Char_Sequence.Text.ToString();
             //We are checking if a button was pressed before and that is not number 6.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 6)
             {
@@ -2892,6 +5143,7 @@ namespace MiniKeyboard
                 {
                     listBox6.SetSelected(index, true);
                     Word_Builder.Text = listBox6.SelectedItem.ToString();
+                    Char_Sequence.Text = listBox6.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -2910,18 +5162,20 @@ namespace MiniKeyboard
                     {
                         listBox6.SetSelected(index, true);
                         Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox6.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 6)
                         {
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                             //Selecting the other items fromt he listbox6 by increasing the index and append them to the WordBuilder textbox.
                             listBox6.SetSelected(index, true);
                             Word_Builder.AppendText(listBox6.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox6.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -2931,14 +5185,606 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
+                }
+            if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("1"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox12.Items.Count; item ++)
+                            {
+                                listBox12.SetSelected(item, true);
+                                string str = listBox12.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l+1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                        else
+                            if (str2.StartsWith("2"))
+                            {
+                                //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox13.Items.Count; item++)
+                                {
+                                    listBox13.SetSelected(item, true);
+                                    string str = listBox13.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("3"))
+                                {
+                                    //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox14.Items.Count; item++)
+                                    {
+                                        listBox14.SetSelected(item, true);
+                                        string str = listBox14.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("4"))
+                                    {
+                                        //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox15.Items.Count; item++)
+                                        {
+                                            listBox15.SetSelected(item, true);
+                                            string str = listBox15.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                else
+                                        if (str2.StartsWith("5"))
+                                        {
+                                            //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox16.Items.Count; item++)
+                                            {
+                                                listBox16.SetSelected(item, true);
+                                                string str = listBox16.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("6"))
+                                            {
+                                                //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox17.Items.Count; item++)
+                                                {
+                                                    listBox17.SetSelected(item, true);
+                                                    string str = listBox17.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                        else
+                                                if (str2.StartsWith("7"))
+                                                {
+                                                    //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox18.Items.Count; item++)
+                                                    {
+                                                        listBox18.SetSelected(item, true);
+                                                        string str = listBox18.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                            else
+                                                    if (str2.StartsWith("8"))
+                                                    {
+                                                        //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox19.Items.Count; item++)
+                                                        {
+                                                            listBox19.SetSelected(item, true);
+                                                            string str = listBox19.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                else
+                                                        if (str2.StartsWith("9"))
+                                                        {
+                                                            //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox20.Items.Count; item++)
+                                                            {
+                                                                listBox20.SetSelected(item, true);
+                                                                string str = listBox20.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                      else
+                                                            if (str2.StartsWith("*"))
+                                                            {
+                                                                //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox21.Items.Count; item++)
+                                                                {
+                                                                    listBox21.SetSelected(item, true);
+                                                                    string str = listBox21.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
+                                                           else
+                                                                if (str2.StartsWith("#"))
+                                                                {
+                                                                    //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                    for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                    {
+                                                                        listBox22.SetSelected(item, true);
+                                                                        string str = listBox22.SelectedItem.ToString();
+                                                                        string str1 = str.Split(',')[0];
+                                                                        string str3 = str.Split(',')[1];
+                                                                        if (str1.StartsWith(str2))
+                                                                        {
+                                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                                        }
+                                                                    }
+                                                                    //Go through the prediction list to find the most frequent used word.
+                                                                    if (listBox23.Items.Count >= 1)
+                                                                    {
+                                                                        string st1 = default(string);
+                                                                        string st2 = default(string);
+                                                                        string st3 = default(string);
+                                                                        int l1 = default(int);
+                                                                        int l2 = default(int);
+                                                                        foreach (string var_st1 in listBox23.Items)
+                                                                        {
+                                                                            st1 = var_st1;
+                                                                            foreach (string var_st2 in listBox23.Items)
+                                                                            {
+                                                                                st2 = var_st2;
+                                                                                if (st1 == st2)
+                                                                                {
+                                                                                    l1++;
+                                                                                }
+                                                                            }
+                                                                            if (l1 > l2)
+                                                                            {
+                                                                                l2 = l1;
+                                                                                st3 = st1;
+                                                                            }
+                                                                            l1 = 0;
+                                                                        }
+                                                                        int l = str2.Length;
+                                                                        string str1 = st3.Split(',')[1];
+                                                                        Word_Builder.Text = str1.ToString();
+                                                                        //We change the colour of the string.
+                                                                        Word_Builder.SelectionStart = 1;
+                                                                        Word_Builder.SelectionLength = l;
+                                                                        Word_Builder.SelectionColor = Color.Black;
+                                                                        Word_Builder.SelectionStart = l + 1;
+                                                                        Word_Builder.SelectionLength = 100;
+                                                                        Word_Builder.SelectionColor = Color.Red;
+                                                                    }
+                                                                }
                 }
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Word_Builder.Text = Char_Sequence.Text.ToString();
             //We are checking if a button was pressed before and that is not number 2.
             while (boolsButtonPressed[intWhichButton] == true && intMyListIndex != 2)
             {
@@ -3257,6 +6103,7 @@ namespace MiniKeyboard
                 {
                     listBox2.SetSelected(index, true);
                     Word_Builder.Text = listBox2.SelectedItem.ToString();
+                    Char_Sequence.Text = listBox2.SelectedItem.ToString();
                     //We increase the index every time we press the button.
                     index++;
                 }
@@ -3275,18 +6122,20 @@ namespace MiniKeyboard
                     {
                         listBox2.SetSelected(index, true);
                         Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                        Char_Sequence.AppendText(listBox2.SelectedItem.ToString());
                         //We increment the index.
                         index++;
                     }
                     else
-                    {
                         if (index <= 6)
                         {
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                             //Selecting the other items fromt he listbox2 by increasing the index and append them to the WordBuilder textbox.
                             listBox2.SetSelected(index, true);
                             Word_Builder.AppendText(listBox2.SelectedItem.ToString());
+                            Char_Sequence.AppendText(listBox2.SelectedItem.ToString());
                             //We increment the index.
                             index++;
                         }
@@ -3296,8 +6145,599 @@ namespace MiniKeyboard
                             index = 0;
                             //We remove the last character of the Word_Builder text.
                             Word_Builder.Text = Word_Builder.Text.Substring(0, Word_Builder.Text.Length - 1);
+                            Char_Sequence.Text = Char_Sequence.Text.Substring(0, Char_Sequence.Text.Length - 1);
                         }
                     }
+                }
+                if (Mode_Status.Text == "Prediction")
+                {
+                    //We clear listbox23 to load another prediction list.
+                    listBox23.Items.Clear();
+                    if (listBox23.Items.Count == 0)
+                    {
+                        string str2 = Key_Sequence.Text.ToString();
+                        if (str2.StartsWith("1"))
+                        {
+                            //Go through all the items in listbox12 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                            for (int item = 0; item < listBox12.Items.Count; item++)
+                            {
+                                listBox12.SetSelected(item, true);
+                                string str = listBox12.SelectedItem.ToString();
+                                string str1 = str.Split(',')[0];
+                                string str3 = str.Split(',')[1];
+                                if (str1.StartsWith(str2))
+                                {
+                                    listBox23.Items.Add(str1 + "," + str3);
+                                }
+                            }
+                            //Go through the prediction list to find the most frequent used word.
+                            if (listBox23.Items.Count >= 1)
+                            {
+                                string st1 = default(string);
+                                string st2 = default(string);
+                                string st3 = default(string);
+                                int l1 = default(int);
+                                int l2 = default(int);
+                                foreach (string var_st1 in listBox23.Items)
+                                {
+                                    st1 = var_st1;
+                                    foreach (string var_st2 in listBox23.Items)
+                                    {
+                                        st2 = var_st2;
+                                        if (st1 == st2)
+                                        {
+                                            l1++;
+                                        }
+                                    }
+                                    if (l1 > l2)
+                                    {
+                                        l2 = l1;
+                                        st3 = st1;
+                                    }
+                                    l1 = 0;
+                                }
+                                int l = str2.Length;
+                                string str1 = st3.Split(',')[1];
+                                Word_Builder.Text = str1.ToString();
+                                //We change the colour of the string.
+                                Word_Builder.SelectionStart = 1;
+                                Word_Builder.SelectionLength = l;
+                                Word_Builder.SelectionColor = Color.Black;
+                                Word_Builder.SelectionStart = l + 1;
+                                Word_Builder.SelectionLength = 100;
+                                Word_Builder.SelectionColor = Color.Red;
+                            }
+                        }
+                        else
+                            if (str2.StartsWith("2"))
+                            {
+                                //Go through all the items in listbox13 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                for (int item = 0; item < listBox13.Items.Count; item++)
+                                {
+                                    listBox13.SetSelected(item, true);
+                                    string str = listBox13.SelectedItem.ToString();
+                                    string str1 = str.Split(',')[0];
+                                    string str3 = str.Split(',')[1];
+                                    if (str1.StartsWith(str2))
+                                    {
+                                        listBox23.Items.Add(str1 + "," + str3);
+                                    }
+                                }
+                                //Go through the prediction list to find the most frequent used word.
+                                if (listBox23.Items.Count >= 1)
+                                {
+                                    string st1 = default(string);
+                                    string st2 = default(string);
+                                    string st3 = default(string);
+                                    int l1 = default(int);
+                                    int l2 = default(int);
+                                    foreach (string var_st1 in listBox23.Items)
+                                    {
+                                        st1 = var_st1;
+                                        foreach (string var_st2 in listBox23.Items)
+                                        {
+                                            st2 = var_st2;
+                                            if (st1 == st2)
+                                            {
+                                                l1++;
+                                            }
+                                        }
+                                        if (l1 > l2)
+                                        {
+                                            l2 = l1;
+                                            st3 = st1;
+                                        }
+                                        l1 = 0;
+                                    }
+                                    int l = str2.Length;
+                                    string str1 = st3.Split(',')[1];
+                                    Word_Builder.Text = str1.ToString();
+                                    //We change the colour of the string.
+                                    Word_Builder.SelectionStart = 1;
+                                    Word_Builder.SelectionLength = l;
+                                    Word_Builder.SelectionColor = Color.Black;
+                                    Word_Builder.SelectionStart = l + 1;
+                                    Word_Builder.SelectionLength = 100;
+                                    Word_Builder.SelectionColor = Color.Red;
+                                }
+                            }
+                            else
+                                if (str2.StartsWith("3"))
+                                {
+                                    //Go through all the items in listbox14 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                    for (int item = 0; item < listBox14.Items.Count; item++)
+                                    {
+                                        listBox14.SetSelected(item, true);
+                                        string str = listBox14.SelectedItem.ToString();
+                                        string str1 = str.Split(',')[0];
+                                        string str3 = str.Split(',')[1];
+                                        if (str1.StartsWith(str2))
+                                        {
+                                            listBox23.Items.Add(str1 + "," + str3);
+                                        }
+                                    }
+                                    //Go through the prediction list to find the most frequent used word.
+                                    if (listBox23.Items.Count >= 1)
+                                    {
+                                        string st1 = default(string);
+                                        string st2 = default(string);
+                                        string st3 = default(string);
+                                        int l1 = default(int);
+                                        int l2 = default(int);
+                                        foreach (string var_st1 in listBox23.Items)
+                                        {
+                                            st1 = var_st1;
+                                            foreach (string var_st2 in listBox23.Items)
+                                            {
+                                                st2 = var_st2;
+                                                if (st1 == st2)
+                                                {
+                                                    l1++;
+                                                }
+                                            }
+                                            if (l1 > l2)
+                                            {
+                                                l2 = l1;
+                                                st3 = st1;
+                                            }
+                                            l1 = 0;
+                                        }
+                                        int l = str2.Length;
+                                        string str1 = st3.Split(',')[1];
+                                        Word_Builder.Text = str1.ToString();
+                                        //We change the colour of the string.
+                                        Word_Builder.SelectionStart = 1;
+                                        Word_Builder.SelectionLength = l;
+                                        Word_Builder.SelectionColor = Color.Black;
+                                        Word_Builder.SelectionStart = l + 1;
+                                        Word_Builder.SelectionLength = 100;
+                                        Word_Builder.SelectionColor = Color.Red;
+                                    }
+                                }
+                                else
+                                    if (str2.StartsWith("4"))
+                                    {
+                                        //Go through all the items in listbox15 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                        for (int item = 0; item < listBox15.Items.Count; item++)
+                                        {
+                                            listBox15.SetSelected(item, true);
+                                            string str = listBox15.SelectedItem.ToString();
+                                            string str1 = str.Split(',')[0];
+                                            string str3 = str.Split(',')[1];
+                                            if (str1.StartsWith(str2))
+                                            {
+                                                listBox23.Items.Add(str1 + "," + str3);
+                                            }
+                                        }
+                                        //Go through the prediction list to find the most frequent used word.
+                                        if (listBox23.Items.Count >= 1)
+                                        {
+                                            string st1 = default(string);
+                                            string st2 = default(string);
+                                            string st3 = default(string);
+                                            int l1 = default(int);
+                                            int l2 = default(int);
+                                            foreach (string var_st1 in listBox23.Items)
+                                            {
+                                                st1 = var_st1;
+                                                foreach (string var_st2 in listBox23.Items)
+                                                {
+                                                    st2 = var_st2;
+                                                    if (st1 == st2)
+                                                    {
+                                                        l1++;
+                                                    }
+                                                }
+                                                if (l1 > l2)
+                                                {
+                                                    l2 = l1;
+                                                    st3 = st1;
+                                                }
+                                                l1 = 0;
+                                            }
+                                            int l = str2.Length;
+                                            string str1 = st3.Split(',')[1];
+                                            Word_Builder.Text = str1.ToString();
+                                            //We change the colour of the string.
+                                            Word_Builder.SelectionStart = 1;
+                                            Word_Builder.SelectionLength = l;
+                                            Word_Builder.SelectionColor = Color.Black;
+                                            Word_Builder.SelectionStart = l + 1;
+                                            Word_Builder.SelectionLength = 100;
+                                            Word_Builder.SelectionColor = Color.Red;
+                                        }
+                                    }
+                                    else
+                                        if (str2.StartsWith("5"))
+                                        {
+                                            //Go through all the items in listbox16 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                            for (int item = 0; item < listBox16.Items.Count; item++)
+                                            {
+                                                listBox16.SetSelected(item, true);
+                                                string str = listBox16.SelectedItem.ToString();
+                                                string str1 = str.Split(',')[0];
+                                                string str3 = str.Split(',')[1];
+                                                if (str1.StartsWith(str2))
+                                                {
+                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                }
+                                            }
+                                            //Go through the prediction list to find the most frequent used word.
+                                            if (listBox23.Items.Count >= 1)
+                                            {
+                                                string st1 = default(string);
+                                                string st2 = default(string);
+                                                string st3 = default(string);
+                                                int l1 = default(int);
+                                                int l2 = default(int);
+                                                foreach (string var_st1 in listBox23.Items)
+                                                {
+                                                    st1 = var_st1;
+                                                    foreach (string var_st2 in listBox23.Items)
+                                                    {
+                                                        st2 = var_st2;
+                                                        if (st1 == st2)
+                                                        {
+                                                            l1++;
+                                                        }
+                                                    }
+                                                    if (l1 > l2)
+                                                    {
+                                                        l2 = l1;
+                                                        st3 = st1;
+                                                    }
+                                                    l1 = 0;
+                                                }
+                                                int l = str2.Length;
+                                                string str1 = st3.Split(',')[1];
+                                                Word_Builder.Text = str1.ToString();
+                                                //We change the colour of the string.
+                                                Word_Builder.SelectionStart = 1;
+                                                Word_Builder.SelectionLength = l;
+                                                Word_Builder.SelectionColor = Color.Black;
+                                                Word_Builder.SelectionStart = l + 1;
+                                                Word_Builder.SelectionLength = 100;
+                                                Word_Builder.SelectionColor = Color.Red;
+                                            }
+                                        }
+                                        else
+                                            if (str2.StartsWith("6"))
+                                            {
+                                                //Go through all the items in listbox17 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                for (int item = 0; item < listBox17.Items.Count; item++)
+                                                {
+                                                    listBox17.SetSelected(item, true);
+                                                    string str = listBox17.SelectedItem.ToString();
+                                                    string str1 = str.Split(',')[0];
+                                                    string str3 = str.Split(',')[1];
+                                                    if (str1.StartsWith(str2))
+                                                    {
+                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                    }
+                                                }
+                                                //Go through the prediction list to find the most frequent used word.
+                                                if (listBox23.Items.Count >= 1)
+                                                {
+                                                    string st1 = default(string);
+                                                    string st2 = default(string);
+                                                    string st3 = default(string);
+                                                    int l1 = default(int);
+                                                    int l2 = default(int);
+                                                    foreach (string var_st1 in listBox23.Items)
+                                                    {
+                                                        st1 = var_st1;
+                                                        foreach (string var_st2 in listBox23.Items)
+                                                        {
+                                                            st2 = var_st2;
+                                                            if (st1 == st2)
+                                                            {
+                                                                l1++;
+                                                            }
+                                                        }
+                                                        if (l1 > l2)
+                                                        {
+                                                            l2 = l1;
+                                                            st3 = st1;
+                                                        }
+                                                        l1 = 0;
+                                                    }
+                                                    int l = str2.Length;
+                                                    string str1 = st3.Split(',')[1];
+                                                    Word_Builder.Text = str1.ToString();
+                                                    //We change the colour of the string.
+                                                    Word_Builder.SelectionStart = 1;
+                                                    Word_Builder.SelectionLength = l;
+                                                    Word_Builder.SelectionColor = Color.Black;
+                                                    Word_Builder.SelectionStart = l + 1;
+                                                    Word_Builder.SelectionLength = 100;
+                                                    Word_Builder.SelectionColor = Color.Red;
+                                                }
+                                            }
+                                            else
+                                                if (str2.StartsWith("7"))
+                                                {
+                                                    //Go through all the items in listbox18 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                    for (int item = 0; item < listBox18.Items.Count; item++)
+                                                    {
+                                                        listBox18.SetSelected(item, true);
+                                                        string str = listBox18.SelectedItem.ToString();
+                                                        string str1 = str.Split(',')[0];
+                                                        string str3 = str.Split(',')[1];
+                                                        if (str1.StartsWith(str2))
+                                                        {
+                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                        }
+                                                    }
+                                                    //Go through the prediction list to find the most frequent used word.
+                                                    if (listBox23.Items.Count >= 1)
+                                                    {
+                                                        string st1 = default(string);
+                                                        string st2 = default(string);
+                                                        string st3 = default(string);
+                                                        int l1 = default(int);
+                                                        int l2 = default(int);
+                                                        foreach (string var_st1 in listBox23.Items)
+                                                        {
+                                                            st1 = var_st1;
+                                                            foreach (string var_st2 in listBox23.Items)
+                                                            {
+                                                                st2 = var_st2;
+                                                                if (st1 == st2)
+                                                                {
+                                                                    l1++;
+                                                                }
+                                                            }
+                                                            if (l1 > l2)
+                                                            {
+                                                                l2 = l1;
+                                                                st3 = st1;
+                                                            }
+                                                            l1 = 0;
+                                                        }
+                                                        int l = str2.Length;
+                                                        string str1 = st3.Split(',')[1];
+                                                        Word_Builder.Text = str1.ToString();
+                                                        //We change the colour of the string.
+                                                        Word_Builder.SelectionStart = 1;
+                                                        Word_Builder.SelectionLength = l;
+                                                        Word_Builder.SelectionColor = Color.Black;
+                                                        Word_Builder.SelectionStart = l + 1;
+                                                        Word_Builder.SelectionLength = 100;
+                                                        Word_Builder.SelectionColor = Color.Red;
+                                                    }
+                                                }
+                                                else
+                                                    if (str2.StartsWith("8"))
+                                                    {
+                                                        //Go through all the items in listbox19 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                        for (int item = 0; item < listBox19.Items.Count; item++)
+                                                        {
+                                                            listBox19.SetSelected(item, true);
+                                                            string str = listBox19.SelectedItem.ToString();
+                                                            string str1 = str.Split(',')[0];
+                                                            string str3 = str.Split(',')[1];
+                                                            if (str1.StartsWith(str2))
+                                                            {
+                                                                listBox23.Items.Add(str1 + "," + str3);
+                                                            }
+                                                        }
+                                                        //Go through the prediction list to find the most frequent used word.
+                                                        if (listBox23.Items.Count >= 1)
+                                                        {
+                                                            string st1 = default(string);
+                                                            string st2 = default(string);
+                                                            string st3 = default(string);
+                                                            int l1 = default(int);
+                                                            int l2 = default(int);
+                                                            foreach (string var_st1 in listBox23.Items)
+                                                            {
+                                                                st1 = var_st1;
+                                                                foreach (string var_st2 in listBox23.Items)
+                                                                {
+                                                                    st2 = var_st2;
+                                                                    if (st1 == st2)
+                                                                    {
+                                                                        l1++;
+                                                                    }
+                                                                }
+                                                                if (l1 > l2)
+                                                                {
+                                                                    l2 = l1;
+                                                                    st3 = st1;
+                                                                }
+                                                                l1 = 0;
+                                                            }
+                                                            int l = str2.Length;
+                                                            string str1 = st3.Split(',')[1];
+                                                            Word_Builder.Text = str1.ToString();
+                                                            //We change the colour of the string.
+                                                            Word_Builder.SelectionStart = 1;
+                                                            Word_Builder.SelectionLength = l;
+                                                            Word_Builder.SelectionColor = Color.Black;
+                                                            Word_Builder.SelectionStart = l + 1;
+                                                            Word_Builder.SelectionLength = 100;
+                                                            Word_Builder.SelectionColor = Color.Red;
+                                                        }
+                                                    }
+                                                    else
+                                                        if (str2.StartsWith("9"))
+                                                        {
+                                                            //Go through all the items in listbox20 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                            for (int item = 0; item < listBox20.Items.Count; item++)
+                                                            {
+                                                                listBox20.SetSelected(item, true);
+                                                                string str = listBox20.SelectedItem.ToString();
+                                                                string str1 = str.Split(',')[0];
+                                                                string str3 = str.Split(',')[1];
+                                                                if (str1.StartsWith(str2))
+                                                                {
+                                                                    listBox23.Items.Add(str1 + "," + str3);
+                                                                }
+                                                            }
+                                                            //Go through the prediction list to find the most frequent used word.
+                                                            if (listBox23.Items.Count >= 1)
+                                                            {
+                                                                string st1 = default(string);
+                                                                string st2 = default(string);
+                                                                string st3 = default(string);
+                                                                int l1 = default(int);
+                                                                int l2 = default(int);
+                                                                foreach (string var_st1 in listBox23.Items)
+                                                                {
+                                                                    st1 = var_st1;
+                                                                    foreach (string var_st2 in listBox23.Items)
+                                                                    {
+                                                                        st2 = var_st2;
+                                                                        if (st1 == st2)
+                                                                        {
+                                                                            l1++;
+                                                                        }
+                                                                    }
+                                                                    if (l1 > l2)
+                                                                    {
+                                                                        l2 = l1;
+                                                                        st3 = st1;
+                                                                    }
+                                                                    l1 = 0;
+                                                                }
+                                                                int l = str2.Length;
+                                                                string str1 = st3.Split(',')[1];
+                                                                Word_Builder.Text = str1.ToString();
+                                                                //We change the colour of the string.
+                                                                Word_Builder.SelectionStart = 1;
+                                                                Word_Builder.SelectionLength = l;
+                                                                Word_Builder.SelectionColor = Color.Black;
+                                                                Word_Builder.SelectionStart = l + 1;
+                                                                Word_Builder.SelectionLength = 100;
+                                                                Word_Builder.SelectionColor = Color.Red;
+                                                            }
+                                                        }
+                                                        else
+                                                            if (str2.StartsWith("*"))
+                                                            {
+                                                                //Go through all the items in listbox21 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                for (int item = 0; item < listBox21.Items.Count; item++)
+                                                                {
+                                                                    listBox21.SetSelected(item, true);
+                                                                    string str = listBox21.SelectedItem.ToString();
+                                                                    string str1 = str.Split(',')[0];
+                                                                    string str3 = str.Split(',')[1];
+                                                                    if (str1.StartsWith(str2))
+                                                                    {
+                                                                        listBox23.Items.Add(str1 + "," + str3);
+                                                                    }
+                                                                }
+                                                                //Go through the prediction list to find the most frequent used word.
+                                                                if (listBox23.Items.Count >= 1)
+                                                                {
+                                                                    string st1 = default(string);
+                                                                    string st2 = default(string);
+                                                                    string st3 = default(string);
+                                                                    int l1 = default(int);
+                                                                    int l2 = default(int);
+                                                                    foreach (string var_st1 in listBox23.Items)
+                                                                    {
+                                                                        st1 = var_st1;
+                                                                        foreach (string var_st2 in listBox23.Items)
+                                                                        {
+                                                                            st2 = var_st2;
+                                                                            if (st1 == st2)
+                                                                            {
+                                                                                l1++;
+                                                                            }
+                                                                        }
+                                                                        if (l1 > l2)
+                                                                        {
+                                                                            l2 = l1;
+                                                                            st3 = st1;
+                                                                        }
+                                                                        l1 = 0;
+                                                                    }
+                                                                    int l = str2.Length;
+                                                                    string str1 = st3.Split(',')[1];
+                                                                    Word_Builder.Text = str1.ToString();
+                                                                    //We change the colour of the string.
+                                                                    Word_Builder.SelectionStart = 1;
+                                                                    Word_Builder.SelectionLength = l;
+                                                                    Word_Builder.SelectionColor = Color.Black;
+                                                                    Word_Builder.SelectionStart = l + 1;
+                                                                    Word_Builder.SelectionLength = 100;
+                                                                    Word_Builder.SelectionColor = Color.Red;
+                                                                }
+                                                            }
+                                                            else
+                                                                if (str2.StartsWith("#"))
+                                                                {
+                                                                    //Go through all the items in listbox22 and if the key_sequence match or start with the split sequence string we load that item in listbox23.
+                                                                    for (int item = 0; item < listBox22.Items.Count; item++)
+                                                                    {
+                                                                        listBox22.SetSelected(item, true);
+                                                                        string str = listBox22.SelectedItem.ToString();
+                                                                        string str1 = str.Split(',')[0];
+                                                                        string str3 = str.Split(',')[1];
+                                                                        if (str1.StartsWith(str2))
+                                                                        {
+                                                                            listBox23.Items.Add(str1 + "," + str3);
+                                                                        }
+                                                                    }
+                                                                    //Go through the prediction list to find the most frequent used word.
+                                                                    if (listBox23.Items.Count >= 1)
+                                                                    {
+                                                                        string st1 = default(string);
+                                                                        string st2 = default(string);
+                                                                        string st3 = default(string);
+                                                                        int l1 = default(int);
+                                                                        int l2 = default(int);
+                                                                        foreach (string var_st1 in listBox23.Items)
+                                                                        {
+                                                                            st1 = var_st1;
+                                                                            foreach (string var_st2 in listBox23.Items)
+                                                                            {
+                                                                                st2 = var_st2;
+                                                                                if (st1 == st2)
+                                                                                {
+                                                                                    l1++;
+                                                                                }
+                                                                            }
+                                                                            if (l1 > l2)
+                                                                            {
+                                                                                l2 = l1;
+                                                                                st3 = st1;
+                                                                            }
+                                                                            l1 = 0;
+                                                                        }
+                                                                        int l = str2.Length;
+                                                                        string str1 = st3.Split(',')[1];
+                                                                        Word_Builder.Text = str1.ToString();
+                                                                        //We change the colour of the string.
+                                                                        Word_Builder.SelectionStart = 1;
+                                                                        Word_Builder.SelectionLength = l;
+                                                                        Word_Builder.SelectionColor = Color.Black;
+                                                                        Word_Builder.SelectionStart = l + 1;
+                                                                        Word_Builder.SelectionLength = 100;
+                                                                        Word_Builder.SelectionColor = Color.Red;
+                                                                    }
+                                                                }
                 }
             }
         }
