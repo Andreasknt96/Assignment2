@@ -40,6 +40,7 @@
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Mode_Status = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Word_Builder = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
@@ -62,6 +63,12 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.withinTimer = new System.Windows.Forms.Timer(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.listBox21 = new System.Windows.Forms.ListBox();
+            this.listBox22 = new System.Windows.Forms.ListBox();
+            this.listBox23 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
@@ -72,9 +79,8 @@
             this.listBox10 = new System.Windows.Forms.ListBox();
             this.listBox11 = new System.Windows.Forms.ListBox();
             this.Key_Sequence = new System.Windows.Forms.TextBox();
-            this.withinTimer = new System.Windows.Forms.Timer(this.components);
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.Char_Sequence = new System.Windows.Forms.TextBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox12 = new System.Windows.Forms.ListBox();
             this.listBox13 = new System.Windows.Forms.ListBox();
             this.listBox14 = new System.Windows.Forms.ListBox();
@@ -83,13 +89,9 @@
             this.listBox18 = new System.Windows.Forms.ListBox();
             this.listBox19 = new System.Windows.Forms.ListBox();
             this.listBox20 = new System.Windows.Forms.ListBox();
-            this.listBox21 = new System.Windows.Forms.ListBox();
-            this.listBox22 = new System.Windows.Forms.ListBox();
-            this.Char_Sequence = new System.Windows.Forms.TextBox();
-            this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox15 = new System.Windows.Forms.ListBox();
-            this.listBox23 = new System.Windows.Forms.ListBox();
-            this.Word_Builder = new System.Windows.Forms.RichTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -191,6 +193,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 33);
             this.panel1.TabIndex = 4;
+            // 
+            // Word_Builder
+            // 
+            this.Word_Builder.Location = new System.Drawing.Point(5, 3);
+            this.Word_Builder.Name = "Word_Builder";
+            this.Word_Builder.Size = new System.Drawing.Size(190, 25);
+            this.Word_Builder.TabIndex = 4;
+            this.Word_Builder.Text = "";
             // 
             // panel2
             // 
@@ -452,6 +462,43 @@
             this.listBox1.Size = new System.Drawing.Size(53, 43);
             this.listBox1.TabIndex = 7;
             // 
+            // withinTimer
+            // 
+            this.withinTimer.Tick += new System.EventHandler(this.withinTimer_Tick);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.InitialDirectory = "c:\\\\";
+            // 
+            // listBox21
+            // 
+            this.listBox21.FormattingEnabled = true;
+            this.listBox21.Location = new System.Drawing.Point(20, 481);
+            this.listBox21.Name = "listBox21";
+            this.listBox21.Size = new System.Drawing.Size(65, 30);
+            this.listBox21.TabIndex = 28;
+            // 
+            // listBox22
+            // 
+            this.listBox22.FormattingEnabled = true;
+            this.listBox22.Location = new System.Drawing.Point(91, 481);
+            this.listBox22.Name = "listBox22";
+            this.listBox22.Size = new System.Drawing.Size(65, 30);
+            this.listBox22.TabIndex = 29;
+            // 
+            // listBox23
+            // 
+            this.listBox23.FormattingEnabled = true;
+            this.listBox23.Location = new System.Drawing.Point(4, 188);
+            this.listBox23.Name = "listBox23";
+            this.listBox23.Size = new System.Drawing.Size(166, 95);
+            this.listBox23.Sorted = true;
+            this.listBox23.TabIndex = 35;
+            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -597,17 +644,28 @@
             this.Key_Sequence.Size = new System.Drawing.Size(119, 20);
             this.Key_Sequence.TabIndex = 18;
             // 
-            // withinTimer
+            // Char_Sequence
             // 
-            this.withinTimer.Tick += new System.EventHandler(this.withinTimer_Tick);
+            this.Char_Sequence.Location = new System.Drawing.Point(465, 227);
+            this.Char_Sequence.Name = "Char_Sequence";
+            this.Char_Sequence.Size = new System.Drawing.Size(119, 20);
+            this.Char_Sequence.TabIndex = 32;
             // 
-            // openFileDialog1
+            // listBox4
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.InitialDirectory = "c:\\\\";
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Items.AddRange(new object[] {
+            "g",
+            "h",
+            "i",
+            "4",
+            "G",
+            "H",
+            "I"});
+            this.listBox4.Location = new System.Drawing.Point(458, 360);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(49, 43);
+            this.listBox4.TabIndex = 33;
             // 
             // listBox12
             // 
@@ -673,45 +731,6 @@
             this.listBox20.Size = new System.Drawing.Size(65, 30);
             this.listBox20.TabIndex = 27;
             // 
-            // listBox21
-            // 
-            this.listBox21.FormattingEnabled = true;
-            this.listBox21.Location = new System.Drawing.Point(20, 481);
-            this.listBox21.Name = "listBox21";
-            this.listBox21.Size = new System.Drawing.Size(65, 30);
-            this.listBox21.TabIndex = 28;
-            // 
-            // listBox22
-            // 
-            this.listBox22.FormattingEnabled = true;
-            this.listBox22.Location = new System.Drawing.Point(91, 481);
-            this.listBox22.Name = "listBox22";
-            this.listBox22.Size = new System.Drawing.Size(65, 30);
-            this.listBox22.TabIndex = 29;
-            // 
-            // Char_Sequence
-            // 
-            this.Char_Sequence.Location = new System.Drawing.Point(465, 227);
-            this.Char_Sequence.Name = "Char_Sequence";
-            this.Char_Sequence.Size = new System.Drawing.Size(119, 20);
-            this.Char_Sequence.TabIndex = 32;
-            // 
-            // listBox4
-            // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
-            "g",
-            "h",
-            "i",
-            "4",
-            "G",
-            "H",
-            "I"});
-            this.listBox4.Location = new System.Drawing.Point(458, 360);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(49, 43);
-            this.listBox4.TabIndex = 33;
-            // 
             // listBox15
             // 
             this.listBox15.FormattingEnabled = true;
@@ -720,22 +739,19 @@
             this.listBox15.Size = new System.Drawing.Size(65, 30);
             this.listBox15.TabIndex = 34;
             // 
-            // listBox23
+            // panel4
             // 
-            this.listBox23.FormattingEnabled = true;
-            this.listBox23.Location = new System.Drawing.Point(4, 188);
-            this.listBox23.Name = "listBox23";
-            this.listBox23.Size = new System.Drawing.Size(166, 95);
-            this.listBox23.Sorted = true;
-            this.listBox23.TabIndex = 35;
+            this.panel4.Location = new System.Drawing.Point(454, 205);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(142, 357);
+            this.panel4.TabIndex = 36;
             // 
-            // Word_Builder
+            // panel5
             // 
-            this.Word_Builder.Location = new System.Drawing.Point(5, 3);
-            this.Word_Builder.Name = "Word_Builder";
-            this.Word_Builder.Size = new System.Drawing.Size(190, 25);
-            this.Word_Builder.TabIndex = 4;
-            this.Word_Builder.Text = "";
+            this.panel5.Location = new System.Drawing.Point(0, 174);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(170, 388);
+            this.panel5.TabIndex = 37;
             // 
             // Form1
             // 
@@ -743,6 +759,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(596, 583);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.listBox23);
             this.Controls.Add(this.listBox15);
             this.Controls.Add(this.listBox4);
@@ -823,6 +841,13 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Timer withinTimer;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ListBox listBox21;
+        private System.Windows.Forms.ListBox listBox22;
+        private System.Windows.Forms.ListBox listBox23;
+        private System.Windows.Forms.RichTextBox Word_Builder;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox5;
@@ -833,9 +858,8 @@
         private System.Windows.Forms.ListBox listBox10;
         private System.Windows.Forms.ListBox listBox11;
         private System.Windows.Forms.TextBox Key_Sequence;
-        private System.Windows.Forms.Timer withinTimer;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TextBox Char_Sequence;
+        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ListBox listBox12;
         private System.Windows.Forms.ListBox listBox13;
         private System.Windows.Forms.ListBox listBox14;
@@ -844,13 +868,9 @@
         private System.Windows.Forms.ListBox listBox18;
         private System.Windows.Forms.ListBox listBox19;
         private System.Windows.Forms.ListBox listBox20;
-        private System.Windows.Forms.ListBox listBox21;
-        private System.Windows.Forms.ListBox listBox22;
-        private System.Windows.Forms.TextBox Char_Sequence;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.ListBox listBox15;
-        private System.Windows.Forms.ListBox listBox23;
-        private System.Windows.Forms.RichTextBox Word_Builder;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
 
     }
 }
